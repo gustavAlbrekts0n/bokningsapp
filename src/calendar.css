@@ -65,15 +65,15 @@
     color: #000000;
   }
 
-  .selected p {
+  .today p {
     font-weight: bold;
     font-size: large;
   }
 
-  .today {
+  .selected {
     background-color: rgb(247, 193, 173);
   }
 
-  .today:hover {
+  .selected:hover {
     background-color: rgb(247, 175, 148);
   }
