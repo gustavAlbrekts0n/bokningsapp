@@ -19,7 +19,8 @@ function CalendarDays(props) {
             month: firstDayOfMonth.getMonth(),
             number: firstDayOfMonth.getDate(),
             selected: (firstDayOfMonth.toDateString() === props.day.toDateString()),
-            year: firstDayOfMonth.getFullYear()
+            year: firstDayOfMonth.getFullYear(),
+            isToday: (firstDayOfMonth.getDate() === props.today.getDate()) // TODO
         }
 
         currentDays.push(calendarDay);
@@ -30,7 +31,7 @@ function CalendarDays(props) {
             {
                 currentDays.map((day) => {
                     return (
-                        <div className={"calendar-day" + (day.currentMonth ? " current" : "") + (day.selected ? " selected" : "")}
+                        <div className={"calendar-day" + (day.currentMonth ? " current" : "") + (day.selected ? " selected" : "") + (day.isToday ? " today" : "")}
                             onClick={() => props.changeCurrentDay(day)}>
                             <p>{day.number}</p>
                         </div>

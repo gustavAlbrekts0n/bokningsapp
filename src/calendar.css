@@ -54,15 +54,26 @@
   
   .calendar-day p {
     position: absolute;
-    right: 10px;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
     color: #a6a6a6;
   }
 
   .current p {
     color: #000000;
   }
-  
+
   .selected p {
-    color: #cc0000;
     font-weight: bold;
+    font-size: large;
+  }
+
+  .today {
+    background-color: rgb(247, 193, 173);
+  }
+
+  .today:hover {
+    background-color: rgb(247, 175, 148);
   }

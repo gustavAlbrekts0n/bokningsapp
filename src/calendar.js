@@ -10,7 +10,8 @@ export default class Calendar extends Component {
         this.months = ["Januari", "Februari", "Mars", "April", "Maj", "Juni", "Juli", "Augusti", "September", "Oktober", "November", "December"];
 
         this.state = {
-            currentDay: new Date()
+            currentDay: new Date(),
+            today: new Date()
         }
     }
 
@@ -32,7 +33,7 @@ export default class Calendar extends Component {
                             })
                         }
                     </div>
-                    <CalendarDays day={this.state.currentDay} changeCurrentDay={this.changeCurrentDay} />
+                    <CalendarDays day={this.state.currentDay} today={this.state.today} changeCurrentDay={this.changeCurrentDay} />
                 </div>
             </div>
         );
