@@ -1,6 +1,7 @@
 function CalendarDays(props) {
     let firstDayOfMonth = new Date(props.day.getFullYear(), props.day.getMonth(), 1);
-    let weekdayOfFirstDay = firstDayOfMonth.getDay();
+    let weekdayOfFirstDay = (firstDayOfMonth.getDay() - 1);
+
     let currentDays = [];
 
     for (let day = 0; day < 42; day++) {
