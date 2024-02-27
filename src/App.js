@@ -1,8 +1,15 @@
+import React, { useState } from 'react';
 import './App.css';
 import Calendar from './calendar';
 import TimePicker from './time-picker';
 
 function App() {
+  const [selectedDate, setSelectedDate] = useState(null);
+
+  const handleDateChange = (date) => {
+    setSelectedDate(date);
+  };
+
   return (
     <div className="app">
       <div className="app-header">
@@ -13,8 +20,8 @@ function App() {
           Brf Ripa
         </h2>
       </div>
-      <Calendar />
-      <TimePicker />
+      <Calendar onDateChange={handleDateChange} />
+      <TimePicker selectedDate={selectedDate} />
     </div>
   );
 }

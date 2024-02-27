@@ -11,13 +11,18 @@ export default class TimePicker extends Component {
             "14:00 - 17:00",
             "17:00 - 21:00"
         ];
+
+        this.weekdays = ["Söndag", "Måndag", "Tisdag", "Onsdag", "Torsdag", "Fredag", "Lördag"];
+        this.months = ["Januari", "Februari", "Mars", "April", "Maj", "Juni", "Juli", "Augusti", "September", "Oktober", "November", "December"];
     }
 
     render() {
+        const date = this.props.selectedDate ? this.weekdays[this.props.selectedDate.weekday] + " " + this.props.selectedDate.number + " " + this.months[this.props.selectedDate.month] : "";
+
         return ( 
             <div className="time-picker">
                 <div className="selected-date">
-                    Tisdag 27 Februari
+                    <p>{this.props.selectedDate ? date : "Välj datum"}</p>
                 </div>
                 <div className="time-list">
                     {

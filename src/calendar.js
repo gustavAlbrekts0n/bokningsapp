@@ -18,6 +18,7 @@ export default class Calendar extends Component {
 
     changeCurrentDay = (day) => {
         this.setState({ currentDay: new Date(day.year, day.month, day.number) });
+        this.props.onDateChange(day);
     }
 
     render() {

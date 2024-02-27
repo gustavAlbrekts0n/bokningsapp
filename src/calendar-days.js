@@ -18,6 +18,7 @@ function CalendarDays(props) {
             date: (new Date(firstDayOfMonth)),
             month: firstDayOfMonth.getMonth(),
             number: firstDayOfMonth.getDate(),
+            weekday: firstDayOfMonth.getDay(),
             selected: (firstDayOfMonth.toDateString() === props.day.toDateString()),
             year: firstDayOfMonth.getFullYear(),
             isToday: ((firstDayOfMonth.getDate() === props.today.getDate()) && (firstDayOfMonth.getMonth() === props.today.getMonth()) && (firstDayOfMonth.getFullYear() === props.today.getFullYear()))
