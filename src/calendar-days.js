@@ -20,7 +20,7 @@ function CalendarDays(props) {
             number: firstDayOfMonth.getDate(),
             selected: (firstDayOfMonth.toDateString() === props.day.toDateString()),
             year: firstDayOfMonth.getFullYear(),
-            isToday: ((firstDayOfMonth.getDate() === props.today.getDate()) && (firstDayOfMonth.getMonth() === props.today.getMonth())) // TODO
+            isToday: ((firstDayOfMonth.getDate() === props.today.getDate()) && (firstDayOfMonth.getMonth() === props.today.getMonth()) && (firstDayOfMonth.getFullYear() === props.today.getFullYear()))
         }
 
         currentDays.push(calendarDay);

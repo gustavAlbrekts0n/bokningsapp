@@ -24,7 +24,7 @@ export default class Calendar extends Component {
         return (
             <div className="calendar">
                 <div className="calendar-header">
-                    <h2>{this.months[this.state.currentDay.getMonth()]} {this.state.currentDay.getFullYear()}</h2>
+                    <p>{this.months[this.state.currentDay.getMonth()]} {this.state.currentDay.getFullYear()}</p>
                 </div>
                 <div className="calendar-body">
                     <div className="table-header">
