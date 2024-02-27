@@ -12,6 +12,7 @@
   width: 100%;
   display: flex;
   align-items: center;
+  justify-content: space-evenly;
   background-color: aqua;
 }
 
@@ -25,8 +26,9 @@
 }
 
 .table-header {
-  height: 100px;
   width: 100%;
+  max-width: 900px;
+  height: 100px;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -41,16 +43,16 @@
 
 .table-content {
   width: 100%;
-  max-width: 1024px;
+  max-width: 900px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
   box-sizing: border-box;
   background-color: rgb(241, 176, 90);
 }
 
 .calendar-day {
-  width: calc(100% / 7);
+  width: calc(100% / 8);
   height: 75px;
   position: relative;
   border: 1px solid #44da31;
@@ -88,6 +90,12 @@
 
 /* Mobile */
 @media only screen and (max-width: 1024px) {
+
+  .calendar-day {
+    
+    height: 60px;
+    
+  }
 
   .selected {
     background-color: rgb(40, 194, 155);
