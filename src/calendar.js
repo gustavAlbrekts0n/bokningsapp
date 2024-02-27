@@ -6,7 +6,7 @@ export default class Calendar extends Component {
     constructor() {
         super();
 
-        this.weekdays = ["Mån", "Tis", "Ons", "Tor", "Fre", "Lör", "Sön"];
+        this.weekdays = ["M", "T", "O", "T", "F", "L", "S"];
         this.months = ["Januari", "Februari", "Mars", "April", "Maj", "Juni", "Juli", "Augusti", "September", "Oktober", "November", "December"];
 
         this.state = {
@@ -23,7 +23,6 @@ export default class Calendar extends Component {
         return (
             <div className="calendar">
                 <div className="calendar-header">
-                    <h2>Boka tvättid</h2>
                     <h2>{this.months[this.state.currentDay.getMonth()]} {this.state.currentDay.getFullYear()}</h2>
                 </div>
                 <div className="calendar-body">
