@@ -41,12 +41,12 @@
   height: 60px;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   background-color: rgba(137, 43, 226, 0.61);
 }
 
 .weekday {
-  width: calc(100% / 7);
+  width: calc(100% / 8);
   text-align: center;
   background-color: red;
 }
@@ -54,6 +54,7 @@
 .table-content {
   width: 100%;
   max-width: 900px;
+  height: 250px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -63,9 +64,10 @@
 
 .calendar-day {
   width: calc(100% / 8);
-  height: 75px;
+  height: calc(100% / 7);
   position: relative;
   border: 1px solid #44da31;
+  border-radius: 25px;
 }
 
 .calendar-day:hover {
@@ -73,8 +75,9 @@
 }
 
 .calendar-day p {
+  font-size: larger;
+  font-weight: 500;
   position: absolute;
-  top: 25%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
@@ -101,19 +104,13 @@
 /* Mobile */
 @media only screen and (max-width: 1024px) {
 
-  .calendar-day {
-    
-    height: 60px;
-    
-  }
-
   .selected {
     background-color: rgb(40, 194, 155);
   }
 
 }
 
-.month-arrows {
+.arrow-container {
   width: 90%;
   height: 60px;
   display: flex;
