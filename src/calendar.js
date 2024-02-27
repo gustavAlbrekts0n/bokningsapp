@@ -34,6 +34,10 @@ export default class Calendar extends Component {
                         }
                     </div>
                     <CalendarDays day={this.state.currentDay} today={this.state.today} changeCurrentDay={this.changeCurrentDay} />
+                    <div className="month-arrows">
+                        <h1>&lt;</h1>
+                        <h1>&gt;</h1>
+                    </div>        
                 </div>
             </div>
         );

@@ -112,3 +112,17 @@
   }
 
 }
+
+.month-arrows {
+  width: 90%;
+  height: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #44da31;
+}
+
+.month-arrows h1 {
+  margin: 0; /* Remove default margin from h1 for better centering */
+}
