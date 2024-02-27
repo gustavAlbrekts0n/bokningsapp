@@ -12,7 +12,7 @@
 
 .app-header {
   width: 95%;
-  max-height: 8%;
+  max-height: 50px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -24,4 +24,5 @@
 
 .app-header h1, .app-header h2 {
   font-weight: 400;
+  padding-top: 20px;
 }
