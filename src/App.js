@@ -1,5 +1,6 @@
 import './App.css';
 import Calendar from './calendar';
+import TimePicker from './time-picker';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         </h2>
       </div>
       <Calendar />
+      <TimePicker />
     </div>
   );
 }
