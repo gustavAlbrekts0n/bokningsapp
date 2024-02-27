@@ -7,7 +7,7 @@
   align-items: center;
   justify-content: center;
   margin: auto;
-  background-color: rgb(182, 252, 213);
+  /*background-color: rgb(182, 252, 213);*/
 }
 
 .app-header {
@@ -19,7 +19,7 @@
   justify-content: space-between;
   font-size: calc(8px + 2vmin);
   color: #282c34;
-  background-color: rgb(168, 41, 41);
+  /*background-color: rgb(168, 41, 41);*/
 }
 
 .app-header h1, .app-header h2 {

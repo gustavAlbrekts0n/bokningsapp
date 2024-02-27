@@ -5,9 +5,9 @@ function App() {
   return (
     <div className="app">
       <div className="app-header">
-        <h1>
+        <h2>
           Boka tvättid
-        </h1>
+        </h2>
         <h2>
           Brf Ripa
         </h2>

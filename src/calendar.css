@@ -5,12 +5,14 @@
   margin: 2%;
   padding-top: 2%;
   padding-bottom: 2%;
+  border: 2px solid rgb(219, 219, 219);
   border-radius: 25px;
   justify-content: center;
   display: flex;
   align-items: center;
   flex-direction: column;
-  background-color: rgb(252, 182, 182);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  /*background-color: rgb(252, 182, 182);*/
 }
 
 .calendar-header {
@@ -19,7 +21,7 @@
   display: flex;
   align-items: center;
   justify-content: left;
-  background-color: aqua;
+  /*background-color: aqua;*/
 }
 
 .calendar-header h2 {
@@ -32,7 +34,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  background-color: rgb(220, 112, 230);
+  /*background-color: rgb(220, 112, 230);*/
 }
 
 .table-header {
@@ -42,13 +44,16 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: rgba(137, 43, 226, 0.61);
+  /*background-color: rgba(137, 43, 226, 0.61);*/
 }
 
 .weekday {
   width: calc(100% / 8);
   text-align: center;
-  background-color: red;
+  font-size: x-large;
+  font-weight: 600;
+  color: rgb(95, 95, 95);
+  /*background-color: red;*/
 }
 
 .table-content {
@@ -59,14 +64,15 @@
   flex-wrap: wrap;
   justify-content: space-between;
   box-sizing: border-box;
-  background-color: rgb(241, 176, 90);
+  /*background-color: rgb(241, 176, 90);*/
 }
 
 .calendar-day {
   width: calc(100% / 8);
   height: calc(100% / 7);
   position: relative;
-  border: 1px solid #44da31;
+  /*border: 1px solid #44da31;*/
+  border: 1px solid rgba(255, 255, 255, 0);
   border-radius: 25px;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -96,19 +102,15 @@
 }
 
 .selected {
-  background-color: rgb(247, 193, 173);
+  background-color: rgb(214, 214, 214);
 }
 
 .selected:hover {
-  background-color: rgb(247, 175, 148);
+  background-color: rgb(212, 212, 212);
 }
 
 /* Mobile */
 @media only screen and (max-width: 1024px) {
-
-  .selected {
-    background-color: rgb(40, 194, 155);
-  }
 
 }
 
@@ -119,7 +121,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  background-color: #44da31;
+  /*background-color: #44da31;*/
 }
 
 .month-arrow {
@@ -134,5 +136,5 @@
 }
 
 .month-arrow:hover {
-  background-color: rgb(184, 184, 184);
+  background-color: rgb(212, 212, 212);
 }
