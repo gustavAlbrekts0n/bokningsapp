@@ -3,7 +3,43 @@
   max-width: 1024px;
   justify-content: center;
   display: flex;
-  align-items: center;
+  align-items: end;
   flex-direction: column;
-  background-color: rgb(208, 177, 236);
+  /*background-color: rgb(208, 177, 236);*/
+}
+
+.selected-date {
+    font-size: x-large;
+    font-weight: 400;
+    padding-top: 15px;
+    /*background-color: orange;*/
+}
+
+.time-list {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    /*background-color: rgb(235, 69, 69);*/
+}
+
+.time {
+    width: 100%;
+    height: 80px;
+    margin: 8px;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 15px;
+    border: 2px solid rgb(219, 219, 219);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    /*background-color: rgb(109, 252, 109);*/
+}
+
+.time p {
+    font-size: x-large;
+    font-weight: 600;
 }
