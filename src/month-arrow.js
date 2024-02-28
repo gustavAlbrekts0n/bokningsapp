@@ -28,7 +28,7 @@ function calculateNewDay(currentDay, goingRight) {
       year: newYear,
       month: newMonth,
       number: newDayOfMonth,
-      weekday: currentDay.getDay()
+      weekday: new Date(newYear, newMonth, newDayOfMonth).getDay()
     };
 }
 
