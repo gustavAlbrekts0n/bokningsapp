@@ -4,7 +4,6 @@ function calculateNewDay(currentDay, goingRight) {
     
     const year = currentDay.getFullYear();
     const month = currentDay.getMonth();
-    const dayOfMonth = currentDay.getDate();
   
     // Calculate the new month and adjust the year if needed
     let newMonth = goingRight ? month + 1 : month - 1;
@@ -20,21 +19,22 @@ function calculateNewDay(currentDay, goingRight) {
     }
   
     // Determine the number of days in the new month
-    const daysInNewMonth = new Date(newYear, newMonth + 1, 0).getDate();
+    const lastDayOfMonth = new Date(newYear, newMonth + 1, 0).getDate();
   
-    // Adjust the day of the month to prevent overflow
-    const newDayOfMonth = Math.min(dayOfMonth, daysInNewMonth);
+    // Set day of new month to either first or last day depending on if going right or not
+    const newDayOfMonth = goingRight ? 1 : lastDayOfMonth;
   
     return {
       year: newYear,
       month: newMonth,
       number: newDayOfMonth,
+      weekday: currentDay.getDay()
     };
 }
 
 function MonthArrow(props) {
 
-    let newDay = calculateNewDay(props.day, props.goingRight);
+    const newDay = calculateNewDay(props.day, props.goingRight);
 
     return (
         <div onClick={() => props.changeCurrentDay(newDay)}>

@@ -3,7 +3,7 @@
   max-width: 1024px;
   justify-content: center;
   display: flex;
-  align-items: end;
+  align-items: flex-end;
   flex-direction: column;
   /*background-color: rgb(208, 177, 236);*/
 }
