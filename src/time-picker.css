@@ -55,6 +55,13 @@
     background-color: rgb(243, 192, 192);
 }
 
+.booked p {
+    text-decoration: line-through;
+    text-decoration-thickness: 2px;
+    text-decoration-skip: none;
+    vertical-align: middle;
+}
+
 .booked:hover {
     background-color: rgb(243, 192, 192);
 }
