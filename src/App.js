@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
-import Calendar from './calendar';
-import TimePicker from './time-picker';
+import Calendar from './components/calendar';
+import TimePicker from './components/time-picker';
 
 function App() {
   const [selectedDate, setSelectedDate] = useState(null);
