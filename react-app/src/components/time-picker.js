@@ -56,7 +56,10 @@ const TimePicker = ({ selectedDate }) => {
 
     const calculateIsBooked = (date, index) => {
         const entry = entries.find((entry) => {
-            return entry.index === index && entry.date.number === date.number;
+            return entry.index === index &&
+                    entry.date.number === date.number &&
+                    entry.date.month === date.month &&
+                    entry.date.year === date.year;
         });
         return entry ? entry.isBooked : false;
     }
