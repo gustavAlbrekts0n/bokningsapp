@@ -4,7 +4,16 @@ import Calendar from './components/calendar';
 import TimePicker from './components/time-picker';
 
 function App() {
-  const [selectedDate, setSelectedDate] = useState(null);
+
+  const calendarToday = new Date();
+  let today = {
+    year: calendarToday.getFullYear(),
+    month: calendarToday.getMonth(),
+    number: calendarToday.getDate(),
+    weekday: calendarToday.getDay()
+  }
+
+  const [selectedDate, setSelectedDate] = useState(today);
 
   const handleDateChange = (date) => {
     setSelectedDate(date);

@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import './time-picker.css';
 
 const Time = ({ index, date, isBooked }) => {
@@ -10,7 +11,7 @@ const Time = ({ index, date, isBooked }) => {
   
     return (
         <div className={"time" + (isBooked ? " booked" : "")} onClick={() => {
-            const data = { date: date.date, index, isBooked };
+            const data = { date, index, isBooked };
             const options = {
                 method: "POST",
                 headers: {
@@ -39,6 +40,19 @@ const TimePicker = ({ selectedDate }) => {
     const dateString = selectedDate
         ? `${weekdays[selectedDate.weekday]} ${selectedDate.number} ${months[selectedDate.month]}`
         : "";
+
+
+    const [entries, setEntries] = useState([]);
+    useEffect(() => {
+        fetch("/api")
+            .then((response) => {
+                return response.json();
+            })
+            .then((data) => {
+                console.log("DATAN: " + data);
+                setEntries(data);
+            });
+    }, []);
 
     return (
         <div className="time-picker">
