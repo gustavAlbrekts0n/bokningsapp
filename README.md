@@ -19,14 +19,16 @@ This repository contains a web-based calendar booking app that enables users to 
 ## Setup Instructions
 
 1. **Clone the Repository:**
+    ```bash
     git clone https://github.com/gustavAlbrekts0n/bokningsapp.git
 
-2. **Install Dependencies:**
-    cd bokningsapp
-    npm install
+3. **Install Dependencies:**
+   ```bash
+   cd bokningsapp
+   npm install
 
-3. **Run the Application (Windows only):**
+5. **Run the Application (Windows only):**
     ./startScript.bat
 
-4. **Access the Application:**
+6. **Access the Application:**
     Open your browser and visit `localhost:8080` to access the app.
