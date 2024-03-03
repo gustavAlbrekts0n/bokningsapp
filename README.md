@@ -1,5 +1,7 @@
 # Calendar Booking App
 
+![alt text](./media/app.png)
+
 ## Overview
 
 This repository contains a web-based calendar booking app that enables users to reserve time slots in a common calendar. The application is developed using React for the frontend and Node.js for the backend.
