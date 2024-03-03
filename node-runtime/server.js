@@ -8,11 +8,10 @@ app.use(express.json());
 
 const database = new Datastore("database.db");
 database.loadDatabase();
-database.insert({date: "Today", isBooked: true});
-database.insert({date: "Tomorrow", isBooked: false});
 
 app.post("/api", (request, response) => {
     const data = request.body;
+    database.insert(data);
     console.log(data);
     response.json({
         status: "success",
