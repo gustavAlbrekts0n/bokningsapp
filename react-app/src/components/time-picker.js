@@ -54,6 +54,13 @@ const TimePicker = ({ selectedDate }) => {
             });
     }, []);
 
+    const calculateIsBooked = (date, index) => {
+        const entry = entries.find((entry) => {
+            return entry.index === index && entry.date.number === date.number;
+        });
+        return entry ? entry.isBooked : false;
+    }
+
     return (
         <div className="time-picker">
             <div className="selected-date">
@@ -70,7 +77,7 @@ const TimePicker = ({ selectedDate }) => {
                             number: selectedDate.number,
                             weekday: selectedDate.weekday
                         }}
-                        isBooked={index % 2 !== 0}
+                        isBooked={calculateIsBooked(selectedDate, index)}
                     />
                 ))}
             </div>
