@@ -1,3 +1,7 @@
+:root {
+  --hover-color: rgb(206, 206, 206);
+}
+
 .calendar {
   width: 95%;
   max-width: 1024px;
@@ -81,7 +85,7 @@
 }
 
 .calendar-day:hover {
-  background-color: rgba(0,0,0,.10);
+  background-color: var(--hover-color);
 }
 
 .calendar-day p {
@@ -108,7 +112,7 @@
 }
 
 .selected:hover {
-  background-color: rgb(212, 212, 212);
+  background-color: var(--hover-color);
 }
 
 /* Mobile */
@@ -138,5 +142,5 @@
 }
 
 .month-arrow:hover {
-  background-color: rgb(212, 212, 212);
+  background-color: var(--hover-color);
 }

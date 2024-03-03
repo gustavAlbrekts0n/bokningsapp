@@ -9,7 +9,17 @@ const Time = ({ index, date, isBooked }) => {
     ];
   
     return (
-        <div className={"time" + (isBooked ? " booked" : "")}>
+        <div className={"time" + (isBooked ? " booked" : "")} onClick={() => {
+            const data = { index, date, isBooked };
+            const options = {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+            };
+            fetch("/api", options);
+        }}>
             <p>{times[index]}</p>
         </div>
     );
@@ -26,14 +36,14 @@ const TimePicker = ({ selectedDate }) => {
     const weekdays = ["Söndag", "Måndag", "Tisdag", "Onsdag", "Torsdag", "Fredag", "Lördag"];
     const months = ["Januari", "Februari", "Mars", "April", "Maj", "Juni", "Juli", "Augusti", "September", "Oktober", "November", "December"];
 
-    const date = selectedDate
+    const dateString = selectedDate
         ? `${weekdays[selectedDate.weekday]} ${selectedDate.number} ${months[selectedDate.month]}`
         : "";
 
     return (
         <div className="time-picker">
             <div className="selected-date">
-                <p>{selectedDate ? date : 'Välj datum'}</p>
+                <p>{selectedDate ? dateString : 'Välj datum'}</p>
             </div>
             <div className="time-list">
                 {times.map((time, index) => (

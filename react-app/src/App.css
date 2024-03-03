@@ -17,7 +17,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  font-size: calc(8px + 2vmin);
+  font-size: larger;
   color: #282c34;
   /*background-color: rgb(168, 41, 41);*/
 }

@@ -22,7 +22,7 @@ export default class Calendar extends Component {
     }
 
     render() {
-        return ( 
+        return (
             <div className="calendar">
                 <div className="calendar-header">
                     <p>{this.months[this.state.currentDay.getMonth()]} {this.state.currentDay.getFullYear()}</p>
