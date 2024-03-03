@@ -10,7 +10,7 @@ const Time = ({ index, date, isBooked }) => {
   
     return (
         <div className={"time" + (isBooked ? " booked" : "")} onClick={() => {
-            const data = { index, date, isBooked };
+            const data = { date: date.date, index, isBooked };
             const options = {
                 method: "POST",
                 headers: {

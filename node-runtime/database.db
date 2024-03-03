@@ -1,2 +1,3 @@
-{"date":"Today","isBooked":true,"_id":"igMmsrqbHvTXktOr"}
-{"date":"Tomorrow","isBooked":false,"_id":"j3DbdwDLjguCT03t"}
+{"date":"2024-03-02T23:00:00.000Z","index":0,"isBooked":false,"_id":"XptLIJeQLxZqkabN"}
+{"date":"2024-03-02T23:00:00.000Z","index":1,"isBooked":true,"_id":"biA48u3LWkQH7yjy"}
+{"date":"2024-03-02T23:00:00.000Z","index":2,"isBooked":false,"_id":"qunmSDjsK9omGwae"}

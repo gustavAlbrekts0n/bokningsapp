@@ -56,10 +56,7 @@
 }
 
 .booked p {
-    text-decoration: line-through;
-    text-decoration-thickness: 2px;
-    text-decoration-skip: none;
-    vertical-align: middle;
+    color: rgba(78, 78, 78, 0.815);
 }
 
 .booked:hover {
