@@ -64,7 +64,12 @@ const TimePicker = ({ selectedDate }) => {
                     <Time
                         key={index}
                         index={index}
-                        date={selectedDate}
+                        date={{
+                            year: selectedDate.year,
+                            month: selectedDate.month,
+                            number: selectedDate.number,
+                            weekday: selectedDate.weekday
+                        }}
                         isBooked={index % 2 !== 0}
                     />
                 ))}
