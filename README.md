@@ -28,7 +28,8 @@ This repository contains a web-based calendar booking app that enables users to 
    npm install
 
 5. **Run the Application (Windows only):**
-    ./startScript.bat
+   ```bash
+   ./startScript.bat
 
-6. **Access the Application:**
-    Open your browser and visit `localhost:8080` to access the app.
+7. **Access the Application:**
+   Open your browser and visit `localhost:8080` to access the app.
