@@ -25,9 +25,6 @@ function App() {
         <h2>
           Boka tvättid
         </h2>
-        <h2>
-          Brf Ripa
-        </h2>
       </div>
       <Calendar onDateChange={handleDateChange} />
       <TimePicker selectedDate={selectedDate} />

@@ -11,15 +11,17 @@ const Time = ({ index, date, isBooked }) => {
   
     return (
         <div className={"time" + (isBooked ? " booked" : "")} onClick={() => {
-            const data = { date, index, isBooked: true };
-            const options = {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(data)
-            };
-            fetch("/api", options);
+            if (!isBooked) {
+                const data = { date, index, isBooked: true };
+                const options = {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(data)
+                };
+                fetch("/api", options);
+            }
         }}>
             <p>{times[index]}</p>
         </div>
@@ -43,17 +45,16 @@ const TimePicker = ({ selectedDate }) => {
 
 
     const [entries, setEntries] = useState([]);
-    useEffect(() => {
+    /*useEffect(() => {
         fetch("/api")
             .then((response) => {
                 return response.json();
             })
             .then((data) => {
-                console.log("DATAN: " + data);
                 setEntries(data);
             });
     }, []);
-
+    */
     const calculateIsBooked = (date, index) => {
         const entry = entries.find((entry) => {
             return entry.index === index &&
