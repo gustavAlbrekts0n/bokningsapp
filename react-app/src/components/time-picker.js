@@ -67,23 +67,39 @@ const TimePicker = ({ selectedDate }) => {
 
     return (
         <div className="time-picker">
-            <div className="selected-date">
-                <p>{selectedDate ? dateString : 'Välj datum'}</p>
+            <div className="time-picker-header">
+                <p>{selectedDate ? dateString : "Välj datum"}</p>
             </div>
-            <div className="time-list">
-                {times.map((time, index) => (
-                    <Time
-                        key={index}
-                        index={index}
-                        date={{
-                            year: selectedDate.year,
-                            month: selectedDate.month,
-                            number: selectedDate.number,
-                            weekday: selectedDate.weekday
-                        }}
-                        isBooked={calculateIsBooked(selectedDate, index)}
-                    />
-                ))}
+            <div className="time-picker-body">
+                <div className="time-list">
+                    {times.map((time, index) => (
+                        <Time
+                            key={index}
+                            index={index}
+                            date={{
+                                year: selectedDate.year,
+                                month: selectedDate.month,
+                                number: selectedDate.number,
+                                weekday: selectedDate.weekday
+                            }}
+                            isBooked={calculateIsBooked(selectedDate, index)}
+                        />
+                    ))}
+                </div>
+                <div className="selected-date">
+                    <div className="selected-date-apartment">
+                        <h2>Lägenhet</h2>
+                        <p>104</p>
+                    </div>
+                    <div className="selected-date-time">
+                        <h2>Datum & Tid</h2>
+                        <p>Fredag 15 januari</p>
+                        <p>07:00 - 11:00</p>
+                    </div>
+                    <div className="selected-date-button">
+                        Boka tid
+                    </div>
+                </div>
             </div>
         </div>
     );

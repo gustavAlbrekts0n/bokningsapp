@@ -1,47 +1,35 @@
-import React, { Component } from 'react';
-import CalendarDays from './calendar-days';
-import './calendar.css';
-import MonthArrow from './month-arrow';
+import React, { useState } from "react";
+import { Calendar } from 'primereact/calendar';
+import { addLocale } from 'primereact/api';
 
-export default class Calendar extends Component {
-    constructor() {
-        super();
+export default function CalendarComponent({ onDateChange }) {
 
-        this.weekdays = ["M", "T", "O", "T", "F", "L", "S"];
-        this.months = ["Januari", "Februari", "Mars", "April", "Maj", "Juni", "Juli", "Augusti", "September", "Oktober", "November", "December"];
+    const [date, setDate] = useState(null);
 
-        this.state = {
-            currentDay: new Date(),
-            today: new Date()
+    addLocale('se', {
+        firstDayOfWeek: 1,
+        showMonthAfterYear: true,
+        dayNames: ['söndag', 'måndag', 'tisdag', 'onsdag', 'torsdag', 'fredag', 'lördag'],
+        dayNamesShort: ['sön', 'mån', 'tis', 'ons', 'tor', 'fre', 'lör'],
+        dayNamesMin: ['S', 'M', 'T', 'O', 'T', 'F', 'L'],
+        monthNames: ['januari', 'februari', 'mars', 'april', 'maj', 'juni', 'juli', 'augusti', 'september', 'oktober', 'november', 'december'],
+        monthNamesShort: ['jan', 'feb', 'mar', 'apr', 'maj', 'jun', 'jul', 'sep', 'okt', 'nov', 'dec'],
+        today: 'Idag',
+        clear: 'Rensa',
+        weekHeader: 'Vecka'
+    });
+
+    const handleDateChange = (e) => {
+        setDate(e.value);
+        if (onDateChange) {
+            onDateChange(e.value);
         }
     }
 
-    changeCurrentDay = (day) => {
-        this.setState({ currentDay: new Date(day.year, day.month, day.number) });
-        this.props.onDateChange(day);
-    }
-
-    render() {
-        return (
-            <div className="calendar">
-                <div className="calendar-header">
-                    <p>{this.months[this.state.currentDay.getMonth()]} {this.state.currentDay.getFullYear()}</p>
-                </div>
-                <div className="calendar-body">
-                    <div className="table-header">
-                        {
-                            this.weekdays.map((weekday) => {
-                                return <div className="weekday"><p>{weekday}</p></div>
-                            })
-                        }
-                    </div>
-                    <CalendarDays day={this.state.currentDay} today={this.state.today} changeCurrentDay={this.changeCurrentDay} />
-                    <div className="arrow-container">
-                        <MonthArrow goingRight={false} day={this.state.currentDay} changeCurrentDay={this.changeCurrentDay}/>
-                        <MonthArrow goingRight={true} day={this.state.currentDay} changeCurrentDay={this.changeCurrentDay}/> 
-                    </div>
-                </div>
-            </div>
-        );
-    }
+    return (
+        <div className="card flex justify-content-center">
+            <Calendar value={date} onChange={handleDateChange} locale="se" inline showButtonBar showWeek />
+        </div>
+    )
 }
+        
