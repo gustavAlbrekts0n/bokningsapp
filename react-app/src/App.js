@@ -29,10 +29,12 @@ function App() {
         </h2>
       </div>
 
-      <PrimeReactProvider>
-        <Calendar onDateChange={handleDateChange} />
-        <Times onTimeChange={handleTimeChange} />
-      </PrimeReactProvider>
+      <div>
+        <PrimeReactProvider>
+          <Calendar onDateChange={handleDateChange} />
+          <Times onTimeChange={handleTimeChange} />
+        </PrimeReactProvider>
+      </div>
       
       <div>
         <p>Selected date: { JSON.stringify(selectedDate) }</p>
