@@ -26,7 +26,17 @@ export default function Times({ onTimeChange }) {
 
     return (
         <div className="card flex justify-content-center">  
-            <ListBox value={selectedTime} onChange={handleTimeChange} options={times} optionLabel="name" className="w-full md:w-14rem" />
+            <ListBox 
+                value={selectedTime} 
+                onChange={handleTimeChange} 
+                options={times} 
+                optionLabel="name" 
+                className="w-full md:w-14rem" 
+                pt={{
+                    root: { className: "times" },
+                    item: { className: "time" }
+                }} 
+            />
         </div>
     )
 }

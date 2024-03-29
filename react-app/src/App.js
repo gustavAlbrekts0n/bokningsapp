@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import { PrimeReactProvider, PrimeReactContext } from 'primereact/api';
+import { PrimeReactProvider } from 'primereact/api';
 import 'primereact/resources/primereact.css';
 import 'primereact/resources/themes/lara-light-indigo/theme.css';
 import './App.css';
-import Calendar from './components/Calendar';
 import Times from './components/Times';
-import TimePicker from './components/time-picker';
+import Calendar from './components/calendar';
 
 function App() {
 
@@ -25,11 +24,11 @@ function App() {
 
       <div className="app-header">
         <h2>
-          Boka tvättid
+          Boka Tid
         </h2>
       </div>
 
-      <div>
+      <div className="datetime">
         <PrimeReactProvider>
           <Calendar onDateChange={handleDateChange} />
           <Times onTimeChange={handleTimeChange} />

@@ -11,12 +11,10 @@
 }
 
 .app-header {
-  width: 95%;
-  max-height: 50px;
+  width: 100%;
   display: flex;
-  flex-direction: row;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
   font-size: larger;
   color: #282c34;
   /*background-color: rgb(168, 41, 41);*/
@@ -24,5 +22,33 @@
 
 .app-header h1, .app-header h2 {
   font-weight: 400;
-  padding-top: 20px;
+  margin: 22px;
+  /*background-color: yellow;*/
+}
+
+.datetime {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: row;
+  /*background-color: red;*/
+}
+
+.times {
+  width: 100%;
+  margin: 0px 20px 0px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*background-color: rgb(255, 96, 96);*/
+}
+
+.time {
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  /*background-color: rgb(153, 221, 153);*/
 }
