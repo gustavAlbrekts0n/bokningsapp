@@ -6,10 +6,10 @@ export default function Times({ onTimeChange }) {
     const [selectedTime, setSelectedTime] = useState('');
 
     const times = [
-        { index: 0, name: '07:00 - 11:00' },
-        { index: 1, name: '11:00 - 14:00', disabled: true },
-        { index: 2, name: '14:00 - 17:00' },
-        { index: 3, name: '17:00 - 21:00' }
+        { index: 0, name: '07:00 - 11:00', disabled: false },
+        { index: 1, name: '11:00 - 14:00', disabled: false },
+        { index: 2, name: '14:00 - 17:00', disabled: false },
+        { index: 3, name: '17:00 - 21:00', disabled: false }
     ];
 
     useEffect(() => {
