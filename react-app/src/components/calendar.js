@@ -28,7 +28,15 @@ export default function CalendarComponent({ onDateChange }) {
 
     return (
         <div className="card flex justify-content-center">
-            <Calendar value={date} onChange={handleDateChange} dateFormat="dd/mm/yy" locale="se" inline showButtonBar showWeek />
+            <Calendar
+                value={date} 
+                onChange={handleDateChange}
+                dateFormat="dd/mm/yy" 
+                locale="se" 
+                inline 
+                showButtonBar 
+                showWeek 
+            />
         </div>
     )
 }

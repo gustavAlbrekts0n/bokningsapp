@@ -4,7 +4,7 @@ import 'primereact/resources/primereact.css';
 import 'primereact/resources/themes/lara-light-indigo/theme.css';
 import './App.css';
 import Times from './components/Times';
-import Calendar from './components/calendar';
+import Calendar from './components/Calendar';
 
 function App() {
 
