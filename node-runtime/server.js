@@ -26,10 +26,6 @@ app.post("/api", (request, response) => {
     console.log(data);
     response.json({
         status: "success",
-        index: data.index,
-        year: data.date.year,
-        month: data.date.month,
-        number: data.date.number,
         isBooked: data.isBooked
     });
 });

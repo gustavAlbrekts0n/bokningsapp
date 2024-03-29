@@ -3,8 +3,9 @@ import { PrimeReactProvider } from 'primereact/api';
 import 'primereact/resources/primereact.css';
 import 'primereact/resources/themes/lara-light-indigo/theme.css';
 import './App.css';
-import Times from './components/Times';
 import Calendar from './components/Calendar';
+import Times from './components/Times';
+import ButtonBook from './components/ButtonBook';
 
 function App() {
 
@@ -35,9 +36,14 @@ function App() {
         </PrimeReactProvider>
       </div>
       
-      <div>
-        <p>Selected date: { JSON.stringify(selectedDate) }</p>
-        <p>Selected time: { selectedTime.name }</p>
+      <div className="confirmation">
+        <div className="selection">
+          <p>Selected date: { JSON.stringify(selectedDate) }</p>
+          <p>Selected time: { selectedTime.name }</p>
+        </div>
+        <div className="button-book">
+          <ButtonBook date={selectedDate} time={selectedTime} />
+        </div>
       </div>
 
     </div>
