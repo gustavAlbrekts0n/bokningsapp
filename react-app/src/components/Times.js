@@ -8,9 +8,20 @@ export default function Times({ onTimeChange }) {
     const times = [
         { index: 0, name: '07:00 - 11:00', disabled: false },
         { index: 1, name: '11:00 - 14:00', disabled: false },
-        { index: 2, name: '14:00 - 17:00', disabled: false },
-        { index: 3, name: '17:00 - 21:00', disabled: false }
+        { index: 2, name: '14:00 - 17:00', disabled: true },
+        { index: 3, name: '17:00 - 21:00', disabled: true }
     ];
+
+    const [entries, setEntries] = useState([]);
+    useEffect(() => {
+        fetch("/api")
+            .then((response) => {
+                return response.json();
+            })
+            .then((data) => {
+                setEntries(data);
+            });
+    }, []);
 
     useEffect(() => {
         // Reset selectedTime when onTimeChange prop changes (i.e., when the parent component re-renders)
