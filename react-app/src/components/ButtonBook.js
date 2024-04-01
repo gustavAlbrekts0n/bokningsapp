@@ -17,7 +17,7 @@ export default function ButtonBook({ date, time }) {
                 };
                 fetch("/api", options);
 
-                console.log("Tid bokad");
+                console.log("Tid bokad:");
                 console.log(date);
                 console.log(time);
             } else {

@@ -32,7 +32,7 @@ function App() {
       <div className="datetime">
         <PrimeReactProvider>
           <Calendar onDateChange={handleDateChange} />
-          <Times onTimeChange={handleTimeChange} />
+          <Times onTimeChange={handleTimeChange} date={selectedDate} />
         </PrimeReactProvider>
       </div>
       
