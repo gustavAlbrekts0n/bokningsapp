@@ -7,7 +7,7 @@
   align-items: center;
   justify-content: center;
   margin: auto;
-  background-color: rgba(182, 252, 213, 0.61);
+  background-color: rgba(236, 72, 72, 0.61);
 }
 
 .app-header {
@@ -33,7 +33,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  background-color: rgb(134, 255, 229);
+  background-color: rgb(252, 245, 181);
 }
 
 .week-picker {
@@ -64,32 +64,58 @@
   justify-content: center;
   align-items: center;
   border-radius: 12px;
-  background-color: rgb(153, 221, 153);
+  background-color: rgb(70, 235, 37);
 }
 
 .confirmation {
-  width: 100%;
+  width: 80%;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   align-items: center;
-  background-color: rgb(208, 255, 220);
+  border-radius: 20px;
+  padding: 20px;
+  margin-top: 30px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background-color: rgb(161, 253, 249);
 }
 
 .selection {
+  width: 50%;
+  padding: 0px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   background-color: blueviolet;
 }
 
+.selection h2 {
+  font-size: 30px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.selection p {
+  font-size: 24px;
+  margin: 0;
+  background-color: yellow;
+}
+
 .button-book {
-  color: black;      
-  font-weight: bold;       
+  padding: 12px 50px;
+  margin-top: 20px;
+  color: black;
+  font-weight: bold;  
   border-radius: 10px;    
-  border: none;            
-  padding: 10px 20px;      
+  border: none;    
   cursor: pointer;       
   text-align: center;
-  background-color: rgb(65, 224, 100);
+  font-size: 22px;
+  transition: background-color 0.2s, transform 0.15s;
+  background-color: rgb(61, 216, 95);
+}
+
+.button-book:hover {
+  transform: scale(1.04);
+  background-color: rgb(49, 194, 81);
 }

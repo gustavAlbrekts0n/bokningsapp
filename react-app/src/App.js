@@ -32,10 +32,26 @@ function App() {
       </div>
 
       <div className="app-body">
+        
         <div className="week-picker">
           Måndag 1/6 - Fredag 5/6
         </div>
+        
         <MyCalendar />
+
+        <div className="confirmation">
+          <div className="selection">
+            <h2>Vald tid</h2>
+            <p>Måndag 1/6</p>
+            <p>11:00 - 14:00</p>
+            {/*
+            <p>{ JSON.stringify(selectedDate) }</p>
+            <p>{ selectedTime.name }</p>
+            */}
+          </div>
+          <ButtonBook date={selectedDate} time={selectedTime} />
+        </div>
+      
       </div>
 
       {/*
@@ -48,19 +64,6 @@ function App() {
         
       </div>
       */}
-
-      <div className="confirmation">
-        <div className="selection">
-          <h2>Vald tid</h2>
-          <p>Måndag 1/6</p>
-          <p>11:00 - 14:00</p>
-          {/*
-          <p>{ JSON.stringify(selectedDate) }</p>
-          <p>{ selectedTime.name }</p>
-          */}
-        </div>
-        <ButtonBook date={selectedDate} time={selectedTime} />
-      </div>
 
     </div>
   );
