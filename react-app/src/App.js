@@ -3,9 +3,8 @@ import { PrimeReactProvider } from 'primereact/api';
 import 'primereact/resources/primereact.css';
 import 'primereact/resources/themes/lara-light-indigo/theme.css';
 import './App.css';
-import Calendar from './components/Calendar';
-import Times from './components/Times';
-import ButtonBook from './components/ButtonBook';
+import MyCalendar from './components/calendar';
+import ButtonBook from './components/buttonBook';
 
 function App() {
 
@@ -24,26 +23,43 @@ function App() {
     <div className="app">
 
       <div className="app-header">
+        <h1>
+          Boka Tvättid
+        </h1>
         <h2>
-          Boka Tid
+          Lgh 104
         </h2>
       </div>
 
+      <div className="app-body">
+        <div className="week-picker">
+          Måndag 1/6 - Fredag 5/6
+        </div>
+        <MyCalendar />
+      </div>
+
+      {/*
       <div className="datetime">
+        
         <PrimeReactProvider>
           <Calendar onDateChange={handleDateChange} />
           <Times onTimeChange={handleTimeChange} date={selectedDate} />
         </PrimeReactProvider>
+        
       </div>
-      
+      */}
+
       <div className="confirmation">
         <div className="selection">
-          <p>Selected date: { JSON.stringify(selectedDate) }</p>
-          <p>Selected time: { selectedTime.name }</p>
+          <h2>Vald tid</h2>
+          <p>Måndag 1/6</p>
+          <p>11:00 - 14:00</p>
+          {/*
+          <p>{ JSON.stringify(selectedDate) }</p>
+          <p>{ selectedTime.name }</p>
+          */}
         </div>
-        <div className="button-book">
-          <ButtonBook date={selectedDate} time={selectedTime} />
-        </div>
+        <ButtonBook date={selectedDate} time={selectedTime} />
       </div>
 
     </div>

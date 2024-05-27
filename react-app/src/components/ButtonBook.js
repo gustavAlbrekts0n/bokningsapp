@@ -1,8 +1,11 @@
-export default function ButtonBook({ date, time }) {
+import React from "react";
+import '../App.css';
+
+function ButtonBook({ date, time }) {
 
     return (
         <div onClick={() => {
-            if (date !== '' && time != '') {
+            if (date !== '' && time !== '') {
                 const data = { 
                     date, 
                     time, 
@@ -24,8 +27,12 @@ export default function ButtonBook({ date, time }) {
                 console.log("Datum och/eller tid ej vald. Lyckades ej boka tid");
             }
         }}>
-            <button>Boka</button>
+            <div className="button-book">
+                Boka
+            </div>
         </div>
     )
 }
+
+export default ButtonBook;
         

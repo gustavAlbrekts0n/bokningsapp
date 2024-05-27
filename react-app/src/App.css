@@ -7,32 +7,46 @@
   align-items: center;
   justify-content: center;
   margin: auto;
-  /*background-color: rgba(182, 252, 213, 0.26);*/
+  background-color: rgba(182, 252, 213, 0.61);
 }
 
 .app-header {
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   font-size: larger;
   color: #282c34;
-  /*background-color: rgb(168, 41, 41);*/
+  background-color: rgb(168, 41, 41);
 }
 
 .app-header h1, .app-header h2 {
   font-weight: 400;
   margin: 22px;
-  /*background-color: yellow;*/
+  background-color: yellow;
+}
+
+.app-body {
+  width: 100%;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(134, 255, 229);
+}
+
+.week-picker {
+  background-color: rgb(255, 152, 255);
 }
 
 .datetime {
   width: 90%;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  flex-direction: row;
-  /*background-color: red;*/
+  align-items: center;
+  flex-direction: column;
+  background-color: rgb(255, 153, 0);
 }
 
 .times {
@@ -41,7 +55,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /*background-color: rgb(255, 96, 96);*/
+  background-color: rgb(96, 178, 255);
 }
 
 .time {
@@ -50,13 +64,32 @@
   justify-content: center;
   align-items: center;
   border-radius: 12px;
-  /*background-color: rgb(153, 221, 153);*/
+  background-color: rgb(153, 221, 153);
 }
 
 .confirmation {
   width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  /*background-color: yellowgreen;*/
+  background-color: rgb(208, 255, 220);
+}
+
+.selection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: blueviolet;
+}
+
+.button-book {
+  color: black;      
+  font-weight: bold;       
+  border-radius: 10px;    
+  border: none;            
+  padding: 10px 20px;      
+  cursor: pointer;       
+  text-align: center;
+  background-color: rgb(65, 224, 100);
 }
