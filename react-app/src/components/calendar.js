@@ -1,8 +1,21 @@
 import React from 'react';
 import './calendar.css';
 
-const MyCalendar = () => {
-    const days = ['Mån 1/6', 'Tis 2/6', 'Ons 3/6', 'Tor 4/6', 'Fre 5/6'];
+function CalendarComponent({ mainOffset = 0 }) {
+
+    function getDateByOffset(offset) {
+        const today = new Date();
+        const newDate = new Date(today);
+        newDate.setDate(today.getDate() + offset + mainOffset);
+        const day   = newDate.getDate();
+        const month = newDate.getMonth() + 1;
+        const weekday = weekdays[newDate.getDay()];
+
+        return (`${weekday} ${day}/${month}`);
+    }
+
+    const weekdays = ["Sön", "Mån", "Tis", "Ons", "Tor", "Fre", "Lör"];
+    const days = Array.from({ length: 5 }, (_, index) => getDateByOffset(index));
     const times = ['07 - 11', '11 - 14', '14 - 17', '17 - 21'];
 
     return (
@@ -25,4 +38,4 @@ const MyCalendar = () => {
     );
 };
 
-export default MyCalendar;
+export default CalendarComponent;

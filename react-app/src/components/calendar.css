@@ -45,7 +45,7 @@
 }
 
 .time-slot:hover {
-    transform: scale(1.03);
-    background-color: rgb(186, 222, 255);
+    /*transform: scale(1.03);*/
+    background-color: rgb(170, 189, 224);
 }
   

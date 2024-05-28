@@ -4,7 +4,7 @@ import { MaterialSymbol } from 'react-material-symbols';
 import 'primereact/resources/primereact.css';
 import 'primereact/resources/themes/lara-light-indigo/theme.css';
 import './App.css';
-import MyCalendar from './components/calendar';
+import CalendarComponent from './components/calendar';
 import ButtonBook from './components/buttonBook';
 
 function App() {
@@ -18,6 +18,16 @@ function App() {
 
   const handleTimeChange = (time) => {
     setSelectedTime(time);
+  };
+
+  const [mainOffset, setMainOffset] = useState(0);
+
+  const handleLeftClick = () => {
+    setMainOffset(prevOffset => prevOffset - 1);
+  };
+
+  const handleRightClick = () => {
+    setMainOffset(prevOffset => prevOffset + 1);
   };
 
   return (
@@ -35,12 +45,16 @@ function App() {
       <div className="app-body">
         
         <div className="week-picker">
-          <MaterialSymbol className="arrow" icon="chevron_left" size={30} />
+          <div onClick={handleLeftClick}>
+            <MaterialSymbol className="arrow" icon="chevron_left" size={32} />
+          </div>
           <p>Måndag 1/6 - Fredag 5/6</p>
-          <MaterialSymbol className="arrow" icon="chevron_right" size={30} />
+          <div onClick={handleRightClick}>
+          <MaterialSymbol className="arrow" icon="chevron_right" size={32} />
+          </div>
         </div>
         
-        <MyCalendar />
+        <CalendarComponent mainOffset={mainOffset} />
 
         <div className="confirmation">
           <div className="selection">

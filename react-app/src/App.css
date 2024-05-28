@@ -62,7 +62,7 @@
 }
 
 .confirmation {
-  width: 80%;
+  width: 600px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -106,10 +106,10 @@
   text-align: center;
   font-size: 22px;
   transition: background-color 0.2s, transform 0.15s;
-  background-color: rgb(61, 216, 95);
+  background-color: rgb(70, 223, 103);
 }
 
 .button-book:hover {
   transform: scale(1.04);
-  background-color: rgb(49, 194, 81);
+  background-color: rgb(64, 207, 95);
 }
