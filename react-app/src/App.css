@@ -11,7 +11,7 @@
   justify-content: center;
   margin: auto;
   font-family: "Red Hat Display", sans-serif;
-  background-color: rgba(236, 72, 72, 0.61);
+  /*background-color: rgba(236, 72, 72, 0.61);*/
 }
 
 .app-header {
@@ -21,13 +21,13 @@
   align-items: center;
   font-size: larger;
   color: #282c34;
-  background-color: rgb(168, 41, 41);
+  /*background-color: rgb(168, 41, 41);*/
 }
 
 .app-header h1, .app-header h2 {
   font-weight: 400;
   margin: 22px;
-  background-color: yellow;
+  /*background-color: yellow;*/
 }
 
 .app-body {
@@ -37,42 +37,28 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  background-color: rgb(252, 245, 181);
+  /*background-color: rgb(252, 245, 181);*/
 }
 
 .week-picker {
-  width: 65%; /* TODO */
-  text-align: center;
-  font-size: larger;
-  padding: 20px;
-  background-color: rgb(255, 152, 255);
+  width: 50%; /* TODO */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 20px;
+  padding: 5px;
+  /*background-color: rgb(252, 133, 118);*/
 }
 
-.datetime {
-  width: 90%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  background-color: rgb(255, 153, 0);
+.arrow {
+  border-radius: 50%;
+  transition: background-color 0.2s;
+  background-color: rgb(255, 255, 255);
 }
 
-.times {
-  width: 100%;
-  margin: 0px 20px 0px 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgb(96, 178, 255);
-}
-
-.time {
-  width: 200px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 12px;
-  background-color: rgb(70, 235, 37);
+.arrow:hover {
+  background-color: #d3d3d3;
 }
 
 .confirmation {
@@ -84,7 +70,7 @@
   padding: 20px;
   margin-top: 30px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  background-color: rgb(161, 253, 249);
+  /*background-color: rgb(161, 253, 249);*/
 }
 
 .selection {
@@ -94,7 +80,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  background-color: blueviolet;
+  /*background-color: blueviolet;*/
 }
 
 .selection h2 {
@@ -106,7 +92,7 @@
 .selection p {
   font-size: 24px;
   margin: 0;
-  background-color: yellow;
+  /*background-color: yellow;*/
 }
 
 .button-book {

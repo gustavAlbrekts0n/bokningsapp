@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { PrimeReactProvider } from 'primereact/api';
+import { MaterialSymbol } from 'react-material-symbols';
 import 'primereact/resources/primereact.css';
 import 'primereact/resources/themes/lara-light-indigo/theme.css';
 import './App.css';
@@ -34,7 +35,9 @@ function App() {
       <div className="app-body">
         
         <div className="week-picker">
-          Måndag 1/6 - Fredag 5/6
+          <MaterialSymbol className="arrow" icon="chevron_left" size={30} />
+          <p>Måndag 1/6 - Fredag 5/6</p>
+          <MaterialSymbol className="arrow" icon="chevron_right" size={30} />
         </div>
         
         <MyCalendar />
