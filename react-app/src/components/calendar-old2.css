@@ -1,0 +1,39 @@
+
+.calendar {
+  background-color: rgb(248, 119, 199);
+}
+
+.grid-header {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  margin-bottom: 10px;
+  background-color: blue;
+}
+
+.header-cell {
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+  background-color: rgb(218, 165, 32);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+
+.grid-cell {
+  border: 1px solid #eeeeee;
+  padding: 10px;
+  text-align: center;
+  border-radius: 10px;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: #eeeeee;
+}
+  

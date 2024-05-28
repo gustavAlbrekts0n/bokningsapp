@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display&display=swap');
+
 .app {
   width: 100%;
   max-width: 1024px;
@@ -7,6 +10,7 @@
   align-items: center;
   justify-content: center;
   margin: auto;
+  font-family: "Red Hat Display", sans-serif;
   background-color: rgba(236, 72, 72, 0.61);
 }
 
@@ -37,6 +41,10 @@
 }
 
 .week-picker {
+  width: 65%; /* TODO */
+  text-align: center;
+  font-size: larger;
+  padding: 20px;
   background-color: rgb(255, 152, 255);
 }
 

@@ -1,38 +1,44 @@
-
 .calendar {
-  background-color: rgb(248, 119, 199);
+    display: flex;
+    flex-direction: column;
 }
 
-.grid-header {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 10px;
-  margin-bottom: 10px;
+.calendar-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: aqua;
 }
 
 .header-cell {
-  font-weight: bold;
-  text-align: center;
-  padding: 10px;
-  background-color: goldenrod;
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+    font-weight: 600;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 16px;
+.body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: rgb(233, 179, 109);
 }
 
-.grid-cell {
-  border: 1px solid #eeeeee;
-  padding: 10px;
-  text-align: center;
-  border-radius: 10px;
-  aspect-ratio: 1 / 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  background-color: #eeeeee;
+.day-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.time-slot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90px;
+    aspect-ratio: 1/1;
+    margin: 6px 16px;
+    text-align: center;
+    border-radius: 15px;
+    background-color: #cccccc;
 }
   
