@@ -3,7 +3,7 @@ import { ConfirmDialog, confirmDialog } from 'primereact/confirmdialog';
 import { Toast } from 'primereact/toast';
 import { Button } from 'primereact/button';
 
-function TemplateDemo() {
+function ButtonBook() {
     
     const toast = useRef(null);
 
@@ -25,7 +25,7 @@ function TemplateDemo() {
                 </div>
             ),
             accept,
-            reject
+            reject,
         });
     };
 
@@ -40,4 +40,4 @@ function TemplateDemo() {
     )
 }
 
-export default TemplateDemo;
+export default ButtonBook;

@@ -19,16 +19,6 @@ function App() {
     setSelectedTime(time);
   };
 
-  const [mainOffset, setMainOffset] = useState(0);
-
-  const handleLeftClick = () => {
-    setMainOffset(prevOffset => prevOffset - 1);
-  };
-
-  const handleRightClick = () => {
-    setMainOffset(prevOffset => prevOffset + 1);
-  };
-
   return (
     <div className="app">
 
@@ -43,7 +33,7 @@ function App() {
 
       <div className="app-body">
         
-        <CalendarComponent mainOffset={mainOffset} />
+        <CalendarComponent />
 
         <div className="confirmation">
           <div className="selection">
@@ -55,7 +45,7 @@ function App() {
             <p>{ selectedTime.name }</p>
             */}
           </div>
-          <ButtonBook date={selectedDate} time={selectedTime} />
+          <ButtonBook />
         </div>
       
       </div>
