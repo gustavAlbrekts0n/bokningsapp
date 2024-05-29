@@ -40,27 +40,6 @@
   /*background-color: rgb(252, 245, 181);*/
 }
 
-.week-picker {
-  width: 50%; /* TODO */
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 20px;
-  padding: 5px;
-  /*background-color: rgb(252, 133, 118);*/
-}
-
-.arrow {
-  border-radius: 50%;
-  transition: background-color 0.2s;
-  background-color: rgb(255, 255, 255);
-}
-
-.arrow:hover {
-  background-color: #d3d3d3;
-}
-
 .confirmation {
   width: 600px;
   display: flex;

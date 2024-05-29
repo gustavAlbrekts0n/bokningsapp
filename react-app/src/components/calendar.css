@@ -1,12 +1,35 @@
 .calendar {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    /*background-color: aquamarine;*/
+}
+
+.week-picker {
+    width: 70%; /* TODO */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 20px;
+    padding: 5px;
+    /*background-color: rgb(252, 133, 118);*/
+}
+  
+.arrow {
+    border-radius: 50%;
+    transition: background-color 0.2s;
+    background-color: rgb(255, 255, 255);
+}
+  
+.arrow:hover {
+    background-color: #d3d3d3;
 }
 
 .calendar-header {
+    width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
     /*background-color: aqua;*/
 }
 
@@ -47,5 +70,14 @@
 .time-slot:hover {
     /*transform: scale(1.03);*/
     background-color: rgb(170, 189, 224);
+}
+
+.past {
+    color: #a3a3a3;
+    background-color: rgb(226, 226, 226);
+}
+
+.past:hover {
+    background-color: rgb(226, 226, 226);
 }
   
