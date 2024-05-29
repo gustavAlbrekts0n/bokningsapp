@@ -65,8 +65,7 @@ function CalendarComponent() {
                             <div
                                 key={timeIndex} 
                                 className={`time-slot ${date < today ? 'past' : ''}`}
-                                onClick={() => printDebug(columnIndex, timeIndex)}
-                            >
+                                onClick={() => printDebug(columnIndex, timeIndex)}>
                                 {time}
                             </div>
                         ))}
