@@ -8,16 +8,13 @@ import ButtonBook from './components/buttonBook';
 
 function App() {
 
-  const [selectedDate, setSelectedDate] = useState('');
-  const [selectedTime, setSelectedTime] = useState('');
+  const [selectedDate, setSelectedDate] = useState("Inget datum valt");
+  const [selectedTime, setSelectedTime] = useState("Ingen tid vald");
 
-  const handleDateChange = (date) => {
+  const handleDateTimeChange = (date, time) => {
     setSelectedDate(date);
-  }
-
-  const handleTimeChange = (time) => {
     setSelectedTime(time);
-  };
+  }
 
   return (
     <div className="app">
@@ -33,13 +30,13 @@ function App() {
 
       <div className="app-body">
         
-        <CalendarComponent />
+        <CalendarComponent onChange={handleDateTimeChange} />
 
         <div className="confirmation">
           <div className="selection">
             <h2>Vald tid</h2>
-            <p>Måndag 1/6</p>
-            <p>11:00 - 14:00</p>
+            <p>{selectedDate}</p>
+            <p>{selectedTime}</p>
             {/*
             <p>{ JSON.stringify(selectedDate) }</p>
             <p>{ selectedTime.name }</p>

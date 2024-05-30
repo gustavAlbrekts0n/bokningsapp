@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './calendar.css';
 import { MaterialSymbol } from 'react-material-symbols';
 
-function CalendarComponent() {
+function CalendarComponent( {onChange} ) {
 
     const [mainOffset, setMainOffset] = useState(0);
 
@@ -59,13 +59,18 @@ function CalendarComponent() {
                 ))}
             </div>
             <div className="body">
-                {days.map(({ date }, columnIndex) => (
+                {days.map(({ dateString, date }, columnIndex) => (
                     <div key={columnIndex} className="day-column">
                         {times.map((time, timeIndex) => (
                             <div
                                 key={timeIndex} 
                                 className={`time-slot ${date < today ? 'past' : ''}`}
-                                onClick={() => printDebug(date.toLocaleDateString(), time)}>
+                                onClick={() => {
+                                    if (date >= today) {
+                                        printDebug(date.toLocaleDateString(), time);
+                                        onChange(dateString, time);
+                                    }
+                                }}>
                                 {time}
                             </div>
                         ))}
