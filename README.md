@@ -1,6 +1,6 @@
 # Calendar Booking App
 
-![alt text](./media/app.png)
+![alt text](./media/app2.png)
 
 ## Overview
 
