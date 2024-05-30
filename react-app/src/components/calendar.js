@@ -27,8 +27,8 @@ function CalendarComponent() {
         return { dateString, date: newDate };
     }
 
-    function printDebug(columnIndex, timeIndex) {
-        console.log(`${columnIndex} ${timeIndex}`);
+    function printDebug(selectedDate, selectedTime) {
+        console.log(`${selectedDate} : ${selectedTime}`);
     }
 
     const times = ['07 - 11', '11 - 14', '14 - 17', '17 - 21'];
@@ -65,7 +65,7 @@ function CalendarComponent() {
                             <div
                                 key={timeIndex} 
                                 className={`time-slot ${date < today ? 'past' : ''}`}
-                                onClick={() => printDebug(columnIndex, timeIndex)}>
+                                onClick={() => printDebug(date.toLocaleDateString(), time)}>
                                 {time}
                             </div>
                         ))}
