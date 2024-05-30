@@ -32,6 +32,7 @@ function CalendarComponent( {onChange} ) {
     }
 
     const times = ['07 - 11', '11 - 14', '14 - 17', '17 - 21'];
+    const timesDetailed = ['07:00-11:00', '11:00-14:00', '14:00-17:00', '17:00-21:00'];
     const weekdays = ["Sön", "Mån", "Tis", "Ons", "Tor", "Fre", "Lör"];
     const days = Array.from({ length: 5 }, (_, index) => getDateByOffset(index));
     const dayFrom = days[0];
@@ -68,7 +69,7 @@ function CalendarComponent( {onChange} ) {
                                 onClick={() => {
                                     if (date >= today) {
                                         printDebug(date.toLocaleDateString(), time);
-                                        onChange(dateString, time);
+                                        onChange(dateString, timesDetailed[timeIndex]);
                                     }
                                 }}>
                                 {time}

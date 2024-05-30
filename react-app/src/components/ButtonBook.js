@@ -12,7 +12,7 @@ function ButtonBook() {
     };
 
     const reject = () => {
-        toast.current.show({ severity: 'warn', summary: 'Bokning avbruten', detail: 'Tiden bokades ej', life: 3000 });
+        toast.current.show({ severity: 'warn', summary: 'Bokning avbruten', detail: 'Tiden har inte bokats', life: 3000 });
     };
 
     const showTemplate = () => {
