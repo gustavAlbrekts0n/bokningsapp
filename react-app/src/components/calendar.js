@@ -1,20 +1,20 @@
 import React, { useState } from 'react';
-import './calendar.css';
+import './Calendar.css';
 import { MaterialSymbol } from 'react-material-symbols';
 
-function CalendarComponent( {onChange} ) {
+const CalendarComponent = ( {onChange} ) => {
 
     const [mainOffset, setMainOffset] = useState(0);
 
-    function handleLeftClick() {
+    const handleLeftClick = () => {
         setMainOffset(prevOffset => prevOffset - 1);
     }
     
-    function handleRightClick() {
+    const handleRightClick = () => {
         setMainOffset(prevOffset => prevOffset + 1);
     }
 
-    function getDateByOffset(offset) {
+    const getDateByOffset = (offset) => {
         const today = new Date();
         const newDate = new Date(today);
         newDate.setDate(today.getDate() + offset + mainOffset);
@@ -27,7 +27,7 @@ function CalendarComponent( {onChange} ) {
         return { dateString, date: newDate };
     }
 
-    function printDebug(selectedDate, selectedTime) {
+    const printDebug = (selectedDate, selectedTime) => {
         console.log(`${selectedDate} : ${selectedTime}`);
     }
 
@@ -65,7 +65,7 @@ function CalendarComponent( {onChange} ) {
                         {times.map((time, timeIndex) => (
                             <div
                                 key={timeIndex} 
-                                className={`time-slot ${date < today ? 'past' : ''}`}
+                                className={`time-slot time-slot-selected ${date < today ? 'time-slot-past' : ''}`}
                                 onClick={() => {
                                     if (date >= today) {
                                         printDebug(date.toLocaleDateString(), time);

@@ -1,3 +1,4 @@
+
 .calendar {
     display: flex;
     flex-direction: column;
@@ -72,12 +73,20 @@
     background-color: rgb(170, 189, 224);
 }
 
-.past {
+.time-slot-selected {
+    background-color: rgb(149, 228, 153);
+}
+
+.time-slot-booked {
+    background-color: rgb(248, 117, 117);
+}
+
+.time-slot-past {
     color: #a3a3a3;
     background-color: rgb(226, 226, 226);
 }
 
-.past:hover {
+.time-slot-past:hover {
     background-color: rgb(226, 226, 226);
 }
   

@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
-import { PrimeReactProvider } from 'primereact/api';
 import 'primereact/resources/primereact.css';
 import 'primereact/resources/themes/lara-light-indigo/theme.css';
 import './App.css';
-import CalendarComponent from './components/calendar';
-import ButtonBook from './components/buttonBook';
+import CalendarComponent from './components/Calendar';
+import ButtonBook from './components/ButtonBook';
 
-function App() {
+const App = () => {
 
-  const [selectedDate, setSelectedDate] = useState("");
+  const [selectedDate, setSelectedDate] = useState(" ");
   const [selectedTime, setSelectedTime] = useState("Ingen tid vald");
 
   const handleDateTimeChange = (date, time) => {
@@ -32,7 +31,7 @@ function App() {
             <p>{selectedDate}</p>
             <p>{selectedTime}</p>
           </div>
-          <ButtonBook />
+          <ButtonBook date={selectedDate} time={selectedTime} />
         </div>
       </div>
     </div>
