@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './Calendar.css';
 import { MaterialSymbol } from 'react-material-symbols';
 
-const CalendarComponent = ( {onChange, bookings} ) => {
+const CalendarComponent = ( {onChange, bookings, selectedDate, selectedTime } ) => {
     const [mainOffset, setMainOffset] = useState(0);
 
     const handleLeftClick = () => {
@@ -26,8 +26,8 @@ const CalendarComponent = ( {onChange, bookings} ) => {
         return { dateString, date: newDate };
     }
 
-    const printDebug = (selectedDate, selectedTime) => {
-        console.log(`${selectedDate} : ${selectedTime}`);
+    const printDebug = (date, time) => {
+        console.log(`${date} : ${time}`);
     }
 
     const times = ['07 - 11', '11 - 14', '14 - 17', '17 - 21'];
@@ -44,6 +44,10 @@ const CalendarComponent = ( {onChange, bookings} ) => {
         return bookings.some(booking =>
             booking.date === dateString && booking.time === timeSlot
         );
+    }
+
+    const isSelected = (dateString, timeSlot) => {
+        return selectedDate.date === dateString && selectedTime.time == timeSlot;
     }
 
     return (
@@ -73,7 +77,8 @@ const CalendarComponent = ( {onChange, bookings} ) => {
                                 className={
                                     `time-slot 
                                     ${date < today ? 'time-slot-past' : ''}
-                                    ${isBooked(dateString, timesDetailed[timeIndex]) ? 'time-slot-booked' : ''}`
+                                    ${isBooked(dateString, timesDetailed[timeIndex]) ? 'time-slot-booked' : ''}
+                                    ${isSelected(dateString, timesDetailed[timeIndex]) ? 'time-slot-selected' : ''}`
                                 }
                                 onClick={() => {
                                     if (date >= today) {

@@ -73,10 +73,6 @@
     background-color: rgb(170, 189, 224);
 }
 
-.time-slot-selected {
-    background-color: rgb(149, 228, 153);
-}
-
 .time-slot-booked {
     background-color: rgb(248, 117, 117);
 }
@@ -88,5 +84,9 @@
 
 .time-slot-past:hover {
     background-color: rgb(226, 226, 226);
+}
+
+.time-slot-selected {
+    background-color: rgb(149, 228, 153);
 }
   

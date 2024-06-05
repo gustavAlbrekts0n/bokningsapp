@@ -10,10 +10,12 @@ const App = () => {
   const [selectedDate, setSelectedDate] = useState(" ");
   const [selectedTime, setSelectedTime] = useState("Ingen tid vald");
   const [data, setData] = useState([]);
+  const [calendarKey, setCalendarKey] = useState(0);
 
   const handleDateTimeChange = (date, time) => {
     setSelectedDate(date);
     setSelectedTime(time);
+    setCalendarKey(prevKey => prevKey + 1);
   }
 
   useEffect(() => {
@@ -34,7 +36,13 @@ const App = () => {
       </div>
 
       <div className="app-body">
-        <CalendarComponent onChange={handleDateTimeChange} bookings={data} />
+        <CalendarComponent
+          key={calendarKey}
+          onChange={handleDateTimeChange}
+          bookings={data}
+          selectedDate={selectedDate}
+          selctedTime={selectedTime} 
+        />
         <div className="confirmation">
           <div className="selection">
             <h2>Vald tid</h2>
