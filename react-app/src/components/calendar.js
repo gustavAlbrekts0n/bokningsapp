@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import './Calendar.css';
 import { MaterialSymbol } from 'react-material-symbols';
 
-const CalendarComponent = ( {onChange} ) => {
-
+const CalendarComponent = ( {onChange, bookings} ) => {
     const [mainOffset, setMainOffset] = useState(0);
 
     const handleLeftClick = () => {
@@ -41,6 +40,12 @@ const CalendarComponent = ( {onChange} ) => {
     const today = new Date();
     today.setHours(0, 0, 0, 0);
 
+    const isBooked = (dateString, timeSlot) => {
+        return bookings.some(booking =>
+            booking.date === dateString && booking.time === timeSlot
+        );
+    }
+
     return (
         <div className="calendar">
             <div className="week-picker">
@@ -65,7 +70,11 @@ const CalendarComponent = ( {onChange} ) => {
                         {times.map((time, timeIndex) => (
                             <div
                                 key={timeIndex} 
-                                className={`time-slot time-slot-selected ${date < today ? 'time-slot-past' : ''}`}
+                                className={
+                                    `time-slot 
+                                    ${date < today ? 'time-slot-past' : ''}
+                                    ${isBooked(dateString, timesDetailed[timeIndex]) ? 'time-slot-booked' : ''}`
+                                }
                                 onClick={() => {
                                     if (date >= today) {
                                         printDebug(date.toLocaleDateString(), time);

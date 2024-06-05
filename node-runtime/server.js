@@ -23,7 +23,7 @@ app.get("/api", (request, response) => {
 app.post("/api", (request, response) => {
     const data = request.body;
     database.insert(data);
-    console.log(data);
+    console.log("Inserting data into db: ", data);
     response.json({
         status: "success",
         isBooked: data.isBooked
