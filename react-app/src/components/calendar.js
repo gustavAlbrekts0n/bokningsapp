@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Calendar.css';
+import './calendar.css';
 import { MaterialSymbol } from 'react-material-symbols';
 
 const CalendarComponent = ( {onChange, bookings, selectedDate, selectedTime } ) => {
@@ -47,7 +47,7 @@ const CalendarComponent = ( {onChange, bookings, selectedDate, selectedTime } ) 
     }
 
     const isSelected = (dateString, timeSlot) => {
-        return selectedDate.date === dateString && selectedTime.time == timeSlot;
+        return selectedDate.date === dateString && selectedTime.time === timeSlot;
     }
 
     return (

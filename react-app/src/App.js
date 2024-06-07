@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import 'primereact/resources/primereact.css';
 import 'primereact/resources/themes/lara-light-indigo/theme.css';
 import './App.css';
-import CalendarComponent from './components/Calendar';
+import CalendarComponent from './components/calendar';
 import ButtonBook from './components/ButtonBook';
 
 const App = () => {
@@ -10,15 +10,14 @@ const App = () => {
   const [selectedDate, setSelectedDate] = useState(" ");
   const [selectedTime, setSelectedTime] = useState("Ingen tid vald");
   const [data, setData] = useState([]);
-  const [calendarKey, setCalendarKey] = useState(0);
 
   const handleDateTimeChange = (date, time) => {
     setSelectedDate(date);
     setSelectedTime(time);
-    setCalendarKey(prevKey => prevKey + 1);
   }
 
   useEffect(() => {
+    // TODO: Turn into async function?
     fetch("/api")
       .then(response => response.json())
       .then(data => {
@@ -37,7 +36,6 @@ const App = () => {
 
       <div className="app-body">
         <CalendarComponent
-          key={calendarKey}
           onChange={handleDateTimeChange}
           bookings={data}
           selectedDate={selectedDate}
