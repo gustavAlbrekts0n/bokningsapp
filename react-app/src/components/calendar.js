@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './calendar.css';
 import { MaterialSymbol } from 'react-material-symbols';
+import TimeSlot from './timeSlot';
 
 const CalendarComponent = ( {onChange, bookings, selectedDate, selectedTime } ) => {
     const [mainOffset, setMainOffset] = useState(0);
@@ -72,22 +73,17 @@ const CalendarComponent = ( {onChange, bookings, selectedDate, selectedTime } ) 
                 {days.map(({ dateString, date }, columnIndex) => (
                     <div key={columnIndex} className="day-column">
                         {times.map((time, timeIndex) => (
-                            <div
-                                key={timeIndex} 
-                                className={
-                                    `time-slot 
-                                    ${date < today ? 'time-slot-past' : ''}
-                                    ${isBooked(dateString, timesDetailed[timeIndex]) ? 'time-slot-booked' : ''}
-                                    ${isSelected(dateString, timesDetailed[timeIndex]) ? 'time-slot-selected' : ''}`
-                                }
-                                onClick={() => {
-                                    if (date >= today) {
-                                        printDebug(date.toLocaleDateString(), time);
-                                        onChange(dateString, timesDetailed[timeIndex]);
-                                    }
-                                }}>
-                                {time}
-                            </div>
+                            <TimeSlot 
+                                key={timeIndex}
+                                date={date}
+                                dateString={dateString}
+                                time={time}
+                                timeDetailed={timesDetailed[timeIndex]}
+                                isBooked={isBooked(dateString, timesDetailed[timeIndex])}
+                                isSelected={isSelected(dateString, timesDetailed[timeIndex])}
+                                today={today}
+                                onTimeSlotClick={onChange}
+                            />
                         ))}
                     </div>
                 ))}
@@ -97,3 +93,23 @@ const CalendarComponent = ( {onChange, bookings, selectedDate, selectedTime } ) 
 };
 
 export default CalendarComponent;
+
+{/*
+    <div
+        // TODO: Turn time slot into component
+        key={timeIndex} 
+        className={
+            `time-slot 
+            ${date < today ? 'time-slot-past' : ''}
+            ${isBooked(dateString, timesDetailed[timeIndex]) ? 'time-slot-booked' : ''}
+            ${isSelected(dateString, timesDetailed[timeIndex]) ? 'time-slot-selected' : ''}`
+        }
+        onClick={() => {
+            if (date >= today) {
+                printDebug(date.toLocaleDateString(), time);
+                onChange(dateString, timesDetailed[timeIndex]);
+            }
+        }}>
+        {time}
+    </div>
+*/}
