@@ -9,7 +9,6 @@ const CalendarComponent = ({
   selectedTime,
   onChange,
 }) => {
-  //onChange, bookings, selectedDate, selectedTime
   const [mainOffset, setMainOffset] = useState(0);
 
   const handleLeftClick = () => {
