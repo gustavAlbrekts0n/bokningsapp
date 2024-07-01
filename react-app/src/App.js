@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import 'primereact/resources/primereact.css';
-import 'primereact/resources/themes/lara-light-indigo/theme.css';
-import './App.css';
-import CalendarComponent from './components/Calendar.js';
-import ButtonBook from './components/ButtonBook';
+import React, { useState, useEffect } from "react";
+import "primereact/resources/primereact.css";
+import "primereact/resources/themes/lara-light-indigo/theme.css";
+import "./App.css";
+import CalendarComponent from "./components/Calendar";
+import ButtonBook from "./components/ButtonBook";
 
 const App = () => {
-
   const [selectedDate, setSelectedDate] = useState(" ");
   const [selectedTime, setSelectedTime] = useState(" ");
   const [data, setData] = useState([]);
@@ -14,17 +13,19 @@ const App = () => {
   const handleDateTimeChange = (date, time) => {
     setSelectedDate(date);
     setSelectedTime(time);
-  }
+  };
 
   useEffect(() => {
     // TODO: Turn into async function?
     fetch("/api")
-      .then(response => response.json())
-      .then(data => {
+      .then((response) => response.json())
+      .then((data) => {
         console.log(data);
         setData(data);
       })
-      .catch(error => console.error("Error fetching data from server:", error));
+      .catch((error) =>
+        console.error("Error fetching data from server:", error)
+      );
   }, []);
 
   return (
@@ -39,7 +40,7 @@ const App = () => {
           onChange={handleDateTimeChange}
           bookings={data}
           selectedDate={selectedDate}
-          selctedTime={selectedTime} 
+          selctedTime={selectedTime}
         />
         <div className="confirmation">
           <div className="selection">
@@ -52,6 +53,6 @@ const App = () => {
       </div>
     </div>
   );
-}
+};
 
 export default App;
