@@ -53,7 +53,7 @@ const ButtonBook = (props) => {
             <Toast ref={toast} />
             <ConfirmDialog group="bookingConfirmation" acceptLabel="Ja" rejectLabel="Nej" />
             <div className="card flex justify-content-center">
-                <Button onClick={() => showTemplate()} className="button-book" label="Boka" raised ></Button>
+                <Button onClick={() => showTemplate()} className="button-book" label="Boka" raised />
             </div>
         </>
     )

@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import './calendar.css';
+import './Calendar.css';
 import { MaterialSymbol } from 'react-material-symbols';
-import TimeSlot from './timeSlot';
+import TimeSlot from './TimeSlot.js';
 
-const CalendarComponent = ( {onChange, bookings, selectedDate, selectedTime } ) => {
+const CalendarComponent = (props) => {
+    //onChange, bookings, selectedDate, selectedTime 
     const [mainOffset, setMainOffset] = useState(0);
 
     const handleLeftClick = () => {
@@ -32,7 +33,7 @@ const CalendarComponent = ( {onChange, bookings, selectedDate, selectedTime } ) 
     }
 
     const times = ['07 - 11', '11 - 14', '14 - 17', '17 - 21'];
-    const timesDetailed = ['07:00-11:00', '11:00-14:00', '14:00-17:00', '17:00-21:00'];
+    const timesDetailed = ["07:00-11:00", "11:00-14:00", "14:00-17:00", "17:00-21:00"];
     const weekdays = ["Sön", "Mån", "Tis", "Ons", "Tor", "Fre", "Lör"];
     const days = Array.from({ length: 5 }, (_, index) => getDateByOffset(index));
     const dayFrom = days[0];
@@ -42,17 +43,21 @@ const CalendarComponent = ( {onChange, bookings, selectedDate, selectedTime } ) 
     today.setHours(0, 0, 0, 0);
 
     const isBooked = (dateString, timeSlot) => {
-        return bookings.some(booking =>
+        return props.bookings.some(booking =>
             booking.date === dateString && booking.time === timeSlot
         );
     }
 
     const isSelected = (dateString, timeSlot) => {
-        return selectedDate.date === dateString && selectedTime.time === timeSlot;
+        //return selectedDate.date === dateString && selectedTime.time === timeSlot;
+        return props.setDate === '';
     }
 
     return (
         <div className="calendar">
+            <p>
+                {props.selectedTime}
+            </p>
             <div className="week-picker">
                 <div onClick={handleLeftClick}>
                     <MaterialSymbol className="arrow" icon="chevron_left" size={32} />
@@ -82,7 +87,7 @@ const CalendarComponent = ( {onChange, bookings, selectedDate, selectedTime } ) 
                                 isBooked={isBooked(dateString, timesDetailed[timeIndex])}
                                 isSelected={isSelected(dateString, timesDetailed[timeIndex])}
                                 today={today}
-                                onTimeSlotClick={onChange}
+                                onTimeSlotClick={props.onChange}
                             />
                         ))}
                     </div>

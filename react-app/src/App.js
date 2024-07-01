@@ -2,13 +2,13 @@ import React, { useState, useEffect } from 'react';
 import 'primereact/resources/primereact.css';
 import 'primereact/resources/themes/lara-light-indigo/theme.css';
 import './App.css';
-import CalendarComponent from './components/calendar';
+import CalendarComponent from './components/Calendar.js';
 import ButtonBook from './components/ButtonBook';
 
 const App = () => {
 
   const [selectedDate, setSelectedDate] = useState(" ");
-  const [selectedTime, setSelectedTime] = useState("Ingen tid vald");
+  const [selectedTime, setSelectedTime] = useState(" ");
   const [data, setData] = useState([]);
 
   const handleDateTimeChange = (date, time) => {

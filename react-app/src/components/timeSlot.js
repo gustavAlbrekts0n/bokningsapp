@@ -1,9 +1,10 @@
-import React from 'react';
-import './calendar.css';
+import React, { useState } from 'react';
+import './Calendar.js';
 
 const TimeSlot = ({ date, dateString, time, timeDetailed, isBooked, isSelected, today, onTimeSlotClick }) => {
     const handleClick = () => {
         if (date >= today) {
+            console.log(timeDetailed);
             onTimeSlotClick(dateString, timeDetailed);
         }
     }
