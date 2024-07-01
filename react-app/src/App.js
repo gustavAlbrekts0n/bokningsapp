@@ -12,6 +12,8 @@ const App = () => {
   const [selectedColumn, setSelectedColumn] = useState(-1);
   const [data, setData] = useState([]);
 
+  let hasSelection = selectedDate !== " ";
+
   const handleDateTimeChange = (date, time, rowIndex, columnIndex) => {
     setSelectedDate(date);
     setSelectedTime(time);
@@ -32,6 +34,19 @@ const App = () => {
       );
   }, []);
 
+  const getSelectionComponent = () => {
+    if (!hasSelection) {
+      return <h2>Välj tid</h2>;
+    }
+    return (
+      <>
+        <h2>Vald tid:</h2>
+        <p>{selectedDate}</p>
+        <p>{selectedTime}</p>
+      </>
+    );
+  };
+
   return (
     <div className="app">
       <div className="app-header">
@@ -49,12 +64,12 @@ const App = () => {
           selectedColumn={selectedColumn}
         />
         <div className="confirmation">
-          <div className="selection">
-            <h2>Vald tid</h2>
-            <p>{selectedDate}</p>
-            <p>{selectedTime}</p>
-          </div>
-          <ButtonBook date={selectedDate} time={selectedTime} />
+          <div className="selection">{getSelectionComponent()}</div>
+          <ButtonBook
+            date={selectedDate}
+            time={selectedTime}
+            hasSelection={hasSelection}
+          />
         </div>
       </div>
     </div>

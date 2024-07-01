@@ -3,7 +3,7 @@ import { ConfirmDialog, confirmDialog } from "primereact/confirmdialog";
 import { Toast } from "primereact/toast";
 import { Button } from "primereact/button";
 
-const ButtonBook = ({ date, time }) => {
+const ButtonBook = ({ date, time, hasSelection }) => {
   const toast = useRef(null);
 
   const postData = (date, time) => {
@@ -68,7 +68,7 @@ const ButtonBook = ({ date, time }) => {
       <div className="card flex justify-content-center">
         <Button
           onClick={() => showTemplate()}
-          className="button-book"
+          className={`button-book ${!hasSelection ? "unbookable" : ""}`}
           label="Boka"
           raised
         />

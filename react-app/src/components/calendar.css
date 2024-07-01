@@ -63,7 +63,7 @@
     margin: 6px 16px;
     cursor: pointer;
     text-align: center;
-    border-radius: 15px;
+    border-radius: 10px;
     transition: background-color 0.2s, transform 0.15s;
     background-color: rgb(165, 230, 168);
     /*background-color: #d3d3d3;*/
@@ -71,7 +71,7 @@
 
 .time-slot:hover {
     /*transform: scale(1.03);*/
-    background-color: rgb(116, 159, 199);
+    background-color: rgb(124, 172, 218);
 }
 
 .time-slot-booked {
