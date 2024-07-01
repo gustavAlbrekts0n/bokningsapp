@@ -8,6 +8,8 @@ const CalendarComponent = ({
   selectedDate,
   selectedTime,
   onChange,
+  selectedRow,
+  selectedColumn,
 }) => {
   const [mainOffset, setMainOffset] = useState(0);
 
@@ -57,12 +59,6 @@ const CalendarComponent = ({
     );
   };
 
-  const isSelected = (dateString, timeSlot) => {
-    //return selectedDate.date === dateString && selectedTime.time === timeSlot;
-    //return props.setDate === '';
-    return false;
-  };
-
   return (
     <div className="calendar">
       <p>{selectedTime}</p>
@@ -85,15 +81,18 @@ const CalendarComponent = ({
       <div className="body">
         {days.map(({ dateString, date }, columnIndex) => (
           <div key={columnIndex} className="day-column">
-            {times.map((time, timeIndex) => (
+            {times.map((time, rowIndex) => (
               <TimeSlot
-                key={timeIndex}
+                key={columnIndex + rowIndex}
+                rowIndex={rowIndex}
+                selectedRow={selectedRow}
+                columnIndex={columnIndex}
+                selectedColumn={selectedColumn}
                 date={date}
                 dateString={dateString}
                 time={time}
-                timeDetailed={timesDetailed[timeIndex]}
-                isBooked={isBooked(dateString, timesDetailed[timeIndex])}
-                isSelected={isSelected(dateString, timesDetailed[timeIndex])}
+                timeDetailed={timesDetailed[rowIndex]}
+                isBooked={isBooked(dateString, timesDetailed[rowIndex])}
                 today={today}
                 onTimeSlotClick={onChange}
               />

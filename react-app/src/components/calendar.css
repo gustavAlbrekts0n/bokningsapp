@@ -65,16 +65,21 @@
     text-align: center;
     border-radius: 15px;
     transition: background-color 0.2s, transform 0.15s;
-    background-color: #d3d3d3;
+    background-color: rgb(129, 218, 134);
+    /*background-color: #d3d3d3;*/
 }
 
 .time-slot:hover {
     /*transform: scale(1.03);*/
-    background-color: rgb(170, 189, 224);
+    background-color: rgb(116, 170, 199);
 }
 
 .time-slot-booked {
     background-color: rgb(248, 117, 117);
+}
+
+.time-slot-booked:hover {
+    background-color: rgb(216, 98, 98);
 }
 
 .time-slot-past {
@@ -87,5 +92,5 @@
 }
 
 .time-slot-selected {
-    background-color: rgb(149, 228, 153);
+    background-color: rgb(133, 188, 219);
 }

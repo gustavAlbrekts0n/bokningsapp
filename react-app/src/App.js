@@ -9,10 +9,14 @@ const App = () => {
   const [selectedDate, setSelectedDate] = useState(" ");
   const [selectedTime, setSelectedTime] = useState(" ");
   const [data, setData] = useState([]);
+  const [selectedRow, setSelectedRow] = useState(-1);
+  const [selectedColumn, setSelectedColumn] = useState(-1);
 
-  const handleDateTimeChange = (date, time) => {
+  const handleDateTimeChange = (date, time, rowIndex, columnIndex) => {
     setSelectedDate(date);
     setSelectedTime(time);
+    setSelectedRow(rowIndex);
+    setSelectedColumn(columnIndex);
   };
 
   useEffect(() => {
@@ -41,6 +45,8 @@ const App = () => {
           bookings={data}
           selectedDate={selectedDate}
           selctedTime={selectedTime}
+          selectedRow={selectedRow}
+          selectedColumn={selectedColumn}
         />
         <div className="confirmation">
           <div className="selection">
