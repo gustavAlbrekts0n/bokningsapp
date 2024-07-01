@@ -3,7 +3,7 @@ import { ConfirmDialog, confirmDialog } from "primereact/confirmdialog";
 import { Toast } from "primereact/toast";
 import { Button } from "primereact/button";
 
-const ButtonBook = (props) => {
+const ButtonBook = ({ date, time }) => {
   const toast = useRef(null);
 
   const postData = (date, time) => {
@@ -29,8 +29,8 @@ const ButtonBook = (props) => {
       detail: "Tiden har bokats",
       life: 3000,
     });
-    postData(props.date, props.time);
-    console.log("Bokning genomförd.", props.date, props.time);
+    postData(date, time);
+    console.log("Bokning genomförd.", date, time);
   };
 
   const reject = () => {
@@ -40,7 +40,7 @@ const ButtonBook = (props) => {
       detail: "Tiden har inte bokats",
       life: 3000,
     });
-    console.log("Bokning avbruten.", props.date, props.time);
+    console.log("Bokning avbruten.", date, time);
   };
 
   const showTemplate = () => {
