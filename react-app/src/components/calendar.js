@@ -15,10 +15,12 @@ const CalendarComponent = ({
 
   const handleLeftClick = () => {
     setMainOffset((prevOffset) => prevOffset - 1);
+    deselect();
   };
 
   const handleRightClick = () => {
     setMainOffset((prevOffset) => prevOffset + 1);
+    deselect();
   };
 
   const getDateByOffset = (offset) => {
@@ -57,6 +59,11 @@ const CalendarComponent = ({
     return bookings.some(
       (booking) => booking.date === dateString && booking.time === timeSlot
     );
+  };
+
+  const deselect = () => {
+    // Deselect selected time slot (date, time, rowindex, columnindex)
+    onChange(" ", " ", -1, -1);
   };
 
   return (

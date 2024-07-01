@@ -8,9 +8,9 @@ import ButtonBook from "./components/ButtonBook";
 const App = () => {
   const [selectedDate, setSelectedDate] = useState(" ");
   const [selectedTime, setSelectedTime] = useState(" ");
-  const [data, setData] = useState([]);
   const [selectedRow, setSelectedRow] = useState(-1);
   const [selectedColumn, setSelectedColumn] = useState(-1);
+  const [data, setData] = useState([]);
 
   const handleDateTimeChange = (date, time, rowIndex, columnIndex) => {
     setSelectedDate(date);

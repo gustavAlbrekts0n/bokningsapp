@@ -65,13 +65,13 @@
     text-align: center;
     border-radius: 15px;
     transition: background-color 0.2s, transform 0.15s;
-    background-color: rgb(129, 218, 134);
+    background-color: rgb(165, 230, 168);
     /*background-color: #d3d3d3;*/
 }
 
 .time-slot:hover {
     /*transform: scale(1.03);*/
-    background-color: rgb(116, 170, 199);
+    background-color: rgb(116, 159, 199);
 }
 
 .time-slot-booked {
