@@ -19,7 +19,20 @@ const ButtonBook = ({ date, time, hasSelection }) => {
       },
       body: JSON.stringify(data),
     };
-    fetch("/api", options);
+    fetch("/api", options)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response not ok");
+        }
+        return response.json();
+      })
+      .then((result) => {
+        console.log(result);
+        window.location.reload(); // TODO: Better solution than reloading the entire page?
+      })
+      .catch((error) => {
+        console.error("There was a problem with fetching the data");
+      });
   };
 
   const accept = () => {
@@ -43,7 +56,21 @@ const ButtonBook = ({ date, time, hasSelection }) => {
     console.log("Bokning avbruten.", date, time);
   };
 
+  const warningNoSelection = () => {
+    toast.current.show({
+      severity: "warn",
+      summary: "Ingen tid vald",
+      detail: "Välj en tid först",
+      life: 3000,
+    });
+    console.log("Bokning ej genomförd, saknar vald tid.");
+  };
+
   const showTemplate = () => {
+    if (!hasSelection) {
+      warningNoSelection();
+      return;
+    }
     confirmDialog({
       group: "bookingConfirmation",
       header: "Bekräftelse",
@@ -68,9 +95,12 @@ const ButtonBook = ({ date, time, hasSelection }) => {
       <div className="card flex justify-content-center">
         <Button
           onClick={() => showTemplate()}
-          className={`button-book ${!hasSelection ? "unbookable" : ""}`}
+          className={`button-book ${
+            !hasSelection ? "unbookable-not-used" : ""
+          }`}
           label="Boka"
           raised
+          disabled={!hasSelection}
         />
       </div>
     </>

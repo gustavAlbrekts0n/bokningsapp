@@ -92,11 +92,19 @@
   cursor: pointer;       
   text-align: center;
   font-size: 22px;
-  transition: background-color 0.2s, transform 0.15s;
-  /*background-color: rgb(70, 223, 103);*/
+  transition: background-color 0.2s;
+  background-color: rgb(115, 177, 212);
 }
 
 .button-book:hover {
-  transform: scale(1.04);
-  background-color: rgb(76, 65, 236);
+  background-color: rgb(104, 146, 185);
+}
+
+.unbookable {
+  color: #6b6b6b;
+  background-color: rgb(189, 189, 189);
+}
+
+.unbookable:hover {
+  background-color: rgb(189, 189, 189);
 }

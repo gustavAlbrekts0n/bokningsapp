@@ -4,6 +4,7 @@ import "primereact/resources/themes/lara-light-indigo/theme.css";
 import "./App.css";
 import CalendarComponent from "./components/Calendar";
 import ButtonBook from "./components/ButtonBook";
+import DropdownComponent from "./components/Dropdown";
 
 const App = () => {
   const [selectedDate, setSelectedDate] = useState(" ");
@@ -36,7 +37,7 @@ const App = () => {
 
   const getSelectionComponent = () => {
     if (!hasSelection) {
-      return <h2>Välj tid</h2>;
+      return <h2>Ingen vald tid</h2>;
     }
     return (
       <>
@@ -55,6 +56,7 @@ const App = () => {
       </div>
 
       <div className="app-body">
+        <DropdownComponent />
         <CalendarComponent
           onChange={handleDateTimeChange}
           bookings={data}

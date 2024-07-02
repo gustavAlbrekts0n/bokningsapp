@@ -71,7 +71,7 @@
 
 .time-slot:hover {
     /*transform: scale(1.03);*/
-    background-color: rgb(124, 172, 218);
+    background-color: rgb(104, 146, 185);
 }
 
 .time-slot-booked {
@@ -92,5 +92,5 @@
 }
 
 .time-slot-selected {
-    background-color: rgb(133, 188, 219);
+    background-color: rgb(115, 177, 212);
 }
