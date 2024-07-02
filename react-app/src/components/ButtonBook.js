@@ -3,13 +3,14 @@ import { ConfirmDialog, confirmDialog } from "primereact/confirmdialog";
 import { Toast } from "primereact/toast";
 import { Button } from "primereact/button";
 
-const ButtonBook = ({ date, time, hasSelection }) => {
+const ButtonBook = ({ date, time, user, hasSelection }) => {
   const toast = useRef(null);
 
-  const postData = (date, time) => {
+  const postData = (date, time, user) => {
     const data = {
       date,
       time,
+      user,
       isBooked: true,
     };
     const options = {
@@ -42,8 +43,8 @@ const ButtonBook = ({ date, time, hasSelection }) => {
       detail: "Tiden har bokats",
       life: 3000,
     });
-    postData(date, time);
-    console.log("Bokning genomförd.", date, time);
+    postData(date, time, user);
+    console.log("Bokning genomförd.", date, time, user);
   };
 
   const reject = () => {
@@ -53,7 +54,7 @@ const ButtonBook = ({ date, time, hasSelection }) => {
       detail: "Tiden har inte bokats",
       life: 3000,
     });
-    console.log("Bokning avbruten.", date, time);
+    console.log("Bokning avbruten.", date, time, user);
   };
 
   const warningNoSelection = () => {
@@ -100,7 +101,7 @@ const ButtonBook = ({ date, time, hasSelection }) => {
           }`}
           label="Boka"
           raised
-          disabled={!hasSelection}
+          disabled={!hasSelection || user === null}
         />
       </div>
     </>

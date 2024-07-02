@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { Dropdown } from "primereact/dropdown";
 
-export default function DropdownComponent() {
-  const [selectedUser, setSelectedUser] = useState(null);
+const DropdownComponent = ({ selectedUser, setSelectedUser }) => {
   const users = [
     { name: "Anders Alvarsson" },
     { name: "Benny Burgersson" },
@@ -21,4 +20,6 @@ export default function DropdownComponent() {
       />
     </div>
   );
-}
+};
+
+export default DropdownComponent;
