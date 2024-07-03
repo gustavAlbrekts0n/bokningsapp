@@ -6,7 +6,7 @@ import { classNames } from "primereact/utils";
 
 // https://v9.primereact.org/inputtext/
 
-const TextInput = ({ setAuthentication }) => {
+const TextInput = ({ selectedUser, setAuthentication }) => {
   const postData = (password) => {
     const data = {
       password,
@@ -52,8 +52,10 @@ const TextInput = ({ setAuthentication }) => {
       return errors;
     },
     onSubmit: () => {
-      postData(formik.values.value);
-      formik.resetForm();
+      if (selectedUser) {
+        postData(formik.values.value);
+        formik.resetForm();
+      }
     },
   });
 

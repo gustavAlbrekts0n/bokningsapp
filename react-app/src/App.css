@@ -24,10 +24,17 @@
   /*background-color: red;*/
 }
 
+.login-body {
+  display: flex;
+  flex-direction: row;
+  padding: 16px;
+  /*background-color: green;*/
+}
+
 .form {
   display: flex;
-  padding: 16px;
-  /*background-color: yellow;*/
+  margin-left: 12px;
+  /*background-color: rgba(0, 42, 230, 0.521);*/
 }
 
 .app-header {

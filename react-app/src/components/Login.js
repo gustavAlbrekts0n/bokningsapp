@@ -6,11 +6,16 @@ const Login = ({ selectedUser, setSelectedUser, setAuthentication }) => {
     <div className="app">
       <div className="login">
         <h2>Logga in</h2>
-        <DropdownComponent
-          selectedUser={selectedUser}
-          setSelectedUser={setSelectedUser}
-        />
-        <TextInput setAuthentication={setAuthentication} />
+        <div className="login-body">
+          <DropdownComponent
+            selectedUser={selectedUser}
+            setSelectedUser={setSelectedUser}
+          />
+          <TextInput
+            selectedUser={selectedUser}
+            setAuthentication={setAuthentication}
+          />
+        </div>
       </div>
     </div>
   );
