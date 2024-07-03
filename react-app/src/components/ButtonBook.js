@@ -32,7 +32,7 @@ const ButtonBook = ({ date, time, user, hasSelection }) => {
         window.location.reload(); // TODO: Better solution than reloading the entire page?
       })
       .catch((error) => {
-        console.error("There was a problem with fetching the data");
+        console.error("There was a problem with fetching the data", error);
       });
   };
 

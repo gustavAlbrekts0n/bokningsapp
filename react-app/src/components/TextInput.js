@@ -7,6 +7,37 @@ import { classNames } from "primereact/utils";
 // https://v9.primereact.org/inputtext/
 
 const TextInput = ({ setAuthentication }) => {
+  const postData = (password) => {
+    const data = {
+      password,
+    };
+
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    };
+
+    fetch("/api/login", options)
+      .then((response) => {
+        if (response.status !== 200) {
+          throw new Error("Network response error");
+        }
+        return response.json();
+      })
+      .then((result) => {
+        if (result.status === 200) {
+          console.log("Authentication successful");
+          setAuthentication(true);
+        }
+      })
+      .catch((error) => {
+        console.error("There was a problem with fetching the data", error);
+      });
+  };
+
   const formik = useFormik({
     initialValues: {
       value: "",
@@ -21,8 +52,8 @@ const TextInput = ({ setAuthentication }) => {
       return errors;
     },
     onSubmit: () => {
+      postData(formik.values.value);
       formik.resetForm();
-      setAuthentication(true);
     },
   });
 
@@ -50,7 +81,7 @@ const TextInput = ({ setAuthentication }) => {
             }}
             className={classNames({ "p-invalid": isFormFieldInvalid("value") })}
           />
-          <label htmlFor="input_value">Användarnamn</label>
+          <label htmlFor="input_value">Lösenord</label>
         </span>
         {getFormErrorMessage("value")}
         <Button type="submit" label="Bekräfta" />
