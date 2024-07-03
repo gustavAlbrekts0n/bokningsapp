@@ -63,6 +63,10 @@
   background-color: yellow;
 }
 
+.navbar {
+  width: 100%;
+}
+
 .app-body {
   width: 100%;
   padding-top: 10px;

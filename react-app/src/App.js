@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "primereact/resources/primereact.css";
 import "primereact/resources/themes/lara-light-indigo/theme.css";
+import "primeicons/primeicons.css";
 import "./App.css";
 import Login from "./components/Login";
+import NavigationBar from "./components/NavigationBar";
 import CalendarComponent from "./components/Calendar";
 import ButtonBook from "./components/ButtonBook";
 
@@ -64,8 +66,9 @@ const App = () => {
       <div className="app">
         <div className="app-header">
           <div className="app-header-content">
-            <h1>Boka Tvättid</h1>
-            <h2>Bertil Bertilsson</h2>
+            <NavigationBar />
+            {/*<h1>Boka Tvättid</h1>
+            <h2>Bertil Bertilsson</h2>*/}
           </div>
         </div>
 
