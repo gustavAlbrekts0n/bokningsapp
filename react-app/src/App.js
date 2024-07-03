@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "primereact/resources/primereact.css";
-import "primereact/resources/themes/lara-light-indigo/theme.css";
+import "primereact/resources/themes/lara-light-teal/theme.css";
 import "primeicons/primeicons.css";
 import "./App.css";
 import Login from "./components/Login";
@@ -52,7 +52,7 @@ const App = () => {
     );
   };
 
-  if (false)
+  if (!isAuthenticated)
     //!isAuthenticated
     return (
       <Login

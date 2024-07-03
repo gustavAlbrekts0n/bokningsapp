@@ -10,7 +10,7 @@
   justify-content: center;
   margin: auto;
   font-family: "Red Hat Display", sans-serif;
-  background-color: rgba(236, 72, 72, 0.61);
+  /*background-color: rgba(236, 72, 72, 0.61);*/
 }
 
 .login {
@@ -45,7 +45,7 @@
   margin-bottom: 0px;
   font-size: medium;
   color: #282c34;
-  background-color: rgb(168, 41, 41);
+  /*background-color: rgb(168, 41, 41);*/
 }
 
 .app-header-content {
@@ -54,13 +54,13 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  background: green;
+  /*background: green;*/
 }
 
 .app-header h1, .app-header h2 {
   font-weight: 400;
   margin: 10px;
-  background-color: yellow;
+  /*background-color: yellow;*/
 }
 
 .navbar {
@@ -75,7 +75,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  background-color: rgb(252, 245, 181);
+  /*background-color: rgb(252, 245, 181);*/
 }
 
 .confirmation {
@@ -89,7 +89,7 @@
   bottom: 0;
   margin-top: 30px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 10px;
-  background-color: rgb(255, 194, 61);
+  /*background-color: rgb(255, 194, 61);*/
 }
 
 .confirmation-content {
@@ -98,7 +98,7 @@
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  background: rgb(211, 21, 228);
+  /*background: rgb(211, 21, 228);*/
 }
 
 .selection {
@@ -108,7 +108,7 @@
   justify-content: space-between;
   align-items: center;
   margin-left: 142px; /* TODO: Hardcoded magic number */
-  background-color: blueviolet;
+  /*background-color: blueviolet;*/
 }
 
 .selection h2 {
@@ -120,7 +120,7 @@
 .selection p {
   font-size: 18px;
   margin: auto;
-  background-color: yellow;
+  /*background-color: yellow;*/
 }
 
 .button-book {

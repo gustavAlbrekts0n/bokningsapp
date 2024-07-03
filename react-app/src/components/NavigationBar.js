@@ -25,9 +25,6 @@ export default function NavigationBar() {
         window.location.reload();
       },
     },
-    {
-      separator: false,
-    },
   ];
 
   const start = (

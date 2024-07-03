@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { MaterialSymbol } from "react-material-symbols";
 import TimeSlot from "./TimeSlot.js";
 import "./Calendar.css";
 
@@ -71,11 +70,17 @@ const CalendarComponent = ({
       <p>{selectedTime}</p>
       <div className="week-picker">
         <div onClick={handleLeftClick}>
-          <MaterialSymbol className="arrow" icon="chevron_left" size={32} />
+          <i
+            className="arrow pi pi-chevron-left"
+            style={{ fontSize: "1rem" }}
+          ></i>
         </div>
         <p>{`${dayFrom.dateString} - ${dayTo.dateString}`}</p>
         <div onClick={handleRightClick}>
-          <MaterialSymbol className="arrow" icon="chevron_right" size={32} />
+          <i
+            className="arrow pi pi-chevron-right"
+            style={{ fontSize: "1rem" }}
+          ></i>
         </div>
       </div>
       <div className="calendar-header">
