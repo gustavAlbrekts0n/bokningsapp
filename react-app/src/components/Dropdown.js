@@ -3,9 +3,9 @@ import { Dropdown } from "primereact/dropdown";
 
 const DropdownComponent = ({ selectedUser, setSelectedUser }) => {
   const users = [
-    { name: "Anders Alvarsson" },
-    { name: "Benny Burgersson" },
-    { name: "Camilla Carlsdotter" },
+    { name: "Adam Adamsson" },
+    { name: "Bertil Bertilsson" },
+    { name: "Calle Callesson" },
   ];
 
   return (

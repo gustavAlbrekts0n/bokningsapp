@@ -50,7 +50,8 @@ const App = () => {
     );
   };
 
-  if (!isAuthenticated)
+  if (false)
+    //!isAuthenticated
     return (
       <Login
         selectedUser={selectedUser}
@@ -62,8 +63,10 @@ const App = () => {
     return (
       <div className="app">
         <div className="app-header">
-          <h1>Boka Tvättid</h1>
-          <h2>Lgh 104</h2>
+          <div className="app-header-content">
+            <h1>Boka Tvättid</h1>
+            <h2>Bertil Bertilsson</h2>
+          </div>
         </div>
 
         <div className="app-body">
@@ -76,13 +79,15 @@ const App = () => {
             selectedColumn={selectedColumn}
           />
           <div className="confirmation">
-            <div className="selection">{getSelectionComponent()}</div>
-            <ButtonBook
-              date={selectedDate}
-              time={selectedTime}
-              user={selectedUser}
-              hasSelection={hasSelection}
-            />
+            <div className="confirmation-content">
+              <div className="selection">{getSelectionComponent()}</div>
+              <ButtonBook
+                date={selectedDate}
+                time={selectedTime}
+                user={selectedUser}
+                hasSelection={hasSelection}
+              />
+            </div>
           </div>
         </div>
       </div>
