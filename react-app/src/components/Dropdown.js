@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Dropdown } from "primereact/dropdown";
 
 const DropdownComponent = ({ selectedUser, setSelectedUser }) => {

@@ -2,10 +2,9 @@ import React, { useState, useEffect } from "react";
 import "primereact/resources/primereact.css";
 import "primereact/resources/themes/lara-light-indigo/theme.css";
 import "./App.css";
+import Login from "./components/Login";
 import CalendarComponent from "./components/Calendar";
 import ButtonBook from "./components/ButtonBook";
-import DropdownComponent from "./components/Dropdown";
-import TextInput from "./components/TextInput";
 
 const App = () => {
   const [isAuthenticated, setAuthentication] = useState(false);
@@ -53,12 +52,11 @@ const App = () => {
 
   if (!isAuthenticated)
     return (
-      <div className="app">
-        <div className="login">
-          <h2>Logga in</h2>
-          <TextInput setAuthentication={setAuthentication} />
-        </div>
-      </div>
+      <Login
+        selectedUser={selectedUser}
+        setSelectedUser={setSelectedUser}
+        setAuthentication={setAuthentication}
+      />
     );
   else
     return (
@@ -69,10 +67,6 @@ const App = () => {
         </div>
 
         <div className="app-body">
-          <DropdownComponent
-            selectedUser={selectedUser}
-            setSelectedUser={setSelectedUser}
-          />
           <CalendarComponent
             onChange={handleDateTimeChange}
             bookings={data}

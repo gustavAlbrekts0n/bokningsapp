@@ -43,7 +43,7 @@ app.post("/api/login", (request, response) => {
     response.json({
       status: 401,
       message: "Unauthorized",
-    });
+    }); // TODO: Catch error
   }
   return response;
 });

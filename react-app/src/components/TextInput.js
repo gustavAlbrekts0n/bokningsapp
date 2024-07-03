@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import { useFormik } from "formik";
 import { InputText } from "primereact/inputtext";
 import { Button } from "primereact/button";
@@ -76,6 +76,7 @@ const TextInput = ({ setAuthentication }) => {
             id="value"
             name="value"
             value={formik.values.value}
+            maxLength={64}
             onChange={(e) => {
               formik.setFieldValue("value", e.target.value);
             }}
