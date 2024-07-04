@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import { Card } from "primereact/card";
 import TimeSlot from "./TimeSlot.js";
 import "./Calendar.css";
 
 const CalendarComponent = ({
   bookings,
+  selectedUser,
   selectedDate,
   selectedTime,
   onChange,
@@ -60,58 +62,75 @@ const CalendarComponent = ({
     );
   };
 
+  const isBookedByUser = (dateString, timeSlot) => {
+    return bookings.some(
+      (booking) =>
+        booking.user.name === selectedUser.name &&
+        booking.date === dateString &&
+        booking.time === timeSlot
+    );
+  };
+
   const deselect = () => {
     // Deselect selected time slot (date, time, rowindex, columnindex)
     onChange(" ", " ", -1, -1);
   };
 
   return (
-    <div className="calendar">
-      <p>{selectedTime}</p>
-      <div className="week-picker">
-        <div onClick={handleLeftClick}>
-          <i
-            className="arrow pi pi-chevron-left"
-            style={{ fontSize: "1rem" }}
-          ></i>
-        </div>
-        <p>{`${dayFrom.dateString} - ${dayTo.dateString}`}</p>
-        <div onClick={handleRightClick}>
-          <i
-            className="arrow pi pi-chevron-right"
-            style={{ fontSize: "1rem" }}
-          ></i>
-        </div>
-      </div>
-      <div className="calendar-header">
-        {days.map(({ dateString }) => (
-          <div key={dateString} className="header-cell">
-            {dateString}
+    <div className="card">
+      <Card title="Boka Tid">
+        <div className="calendar">
+          "{selectedUser.name}"
+          <div className="week-picker">
+            <div onClick={handleLeftClick}>
+              <i
+                className="arrow pi pi-chevron-left"
+                style={{ fontSize: "1rem" }}
+              ></i>
+            </div>
+            <p>{`${dayFrom.dateString} - ${dayTo.dateString}`}</p>
+            <div onClick={handleRightClick}>
+              <i
+                className="arrow pi pi-chevron-right"
+                style={{ fontSize: "1rem" }}
+              ></i>
+            </div>
           </div>
-        ))}
-      </div>
-      <div className="body">
-        {days.map(({ dateString, date }, columnIndex) => (
-          <div key={columnIndex} className="day-column">
-            {times.map((time, rowIndex) => (
-              <TimeSlot
-                key={columnIndex + rowIndex}
-                rowIndex={rowIndex}
-                selectedRow={selectedRow}
-                columnIndex={columnIndex}
-                selectedColumn={selectedColumn}
-                date={date}
-                dateString={dateString}
-                time={time}
-                timeDetailed={timesDetailed[rowIndex]}
-                isBooked={isBooked(dateString, timesDetailed[rowIndex])}
-                today={today}
-                onTimeSlotClick={onChange}
-              />
+          <div className="calendar-header">
+            {days.map(({ dateString }) => (
+              <div key={dateString} className="header-cell">
+                {dateString}
+              </div>
             ))}
           </div>
-        ))}
-      </div>
+          <div className="body">
+            {days.map(({ dateString, date }, columnIndex) => (
+              <div key={columnIndex} className="day-column">
+                {times.map((time, rowIndex) => (
+                  <TimeSlot
+                    key={columnIndex + rowIndex}
+                    rowIndex={rowIndex}
+                    selectedRow={selectedRow}
+                    columnIndex={columnIndex}
+                    selectedColumn={selectedColumn}
+                    date={date}
+                    dateString={dateString}
+                    time={time}
+                    timeDetailed={timesDetailed[rowIndex]}
+                    isBooked={isBooked(dateString, timesDetailed[rowIndex])}
+                    isBookedByUser={isBookedByUser(
+                      dateString,
+                      timesDetailed[rowIndex]
+                    )}
+                    today={today}
+                    onTimeSlotClick={onChange}
+                  />
+                ))}
+              </div>
+            ))}
+          </div>
+        </div>
+      </Card>
     </div>
   );
 };

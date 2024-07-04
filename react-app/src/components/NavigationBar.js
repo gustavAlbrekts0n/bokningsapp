@@ -1,5 +1,6 @@
 import React from "react";
 import { Menubar } from "primereact/menubar";
+import { Button } from "primereact/button";
 
 export default function NavigationBar() {
   const items = [
@@ -24,6 +25,8 @@ export default function NavigationBar() {
         console.log("Clicked Sign Out");
         window.location.reload();
       },
+      disabled: true,
+      visible: false,
     },
   ];
 
@@ -35,11 +38,21 @@ export default function NavigationBar() {
       className="mr-2"
     ></img>
   );
-  const end = <div className="flex align-items-center gap-2">Bertil</div>;
+  const end = (
+    <Button
+      onClick={() => {
+        console.log("Clicked Sign Out");
+        window.location.reload();
+      }}
+      className="card flex justify-content-center"
+      label="Logga ut"
+      raised
+    />
+  );
 
   return (
     <div className="navbar">
-      <Menubar model={items} start={start} end={end} />
+      <Menubar model={items} end={end} />
     </div>
   );
 }

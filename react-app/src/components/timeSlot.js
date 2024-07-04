@@ -10,6 +10,7 @@ const TimeSlot = ({
   selectedColumn,
   timeDetailed,
   isBooked,
+  isBookedByUser,
   today,
   onTimeSlotClick,
 }) => {
@@ -29,6 +30,7 @@ const TimeSlot = ({
       className={`time-slot unselectable
                 ${date < today ? "time-slot-past" : ""}
                 ${isBooked ? "time-slot-booked" : ""}
+                ${isBookedByUser ? "time-slot-booked-user" : ""}
                 ${isSelected() ? "time-slot-selected" : ""}`}
       onClick={handleClick}
     >

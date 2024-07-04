@@ -96,3 +96,7 @@
 .time-slot-selected {
     background-color: rgb(115, 177, 212);
 }
+
+.time-slot-booked-user {
+    background-color: rgb(16, 165, 16);
+}

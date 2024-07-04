@@ -31,7 +31,11 @@ const App = () => {
     fetch("/api")
       .then((response) => response.json())
       .then((data) => {
+        console.log("Fetched data from server:");
         console.log(data);
+        /*const filteredData = data.filter(
+          (item) => item.user && item.user.name === selectedUser.name
+        );*/
         setData(data);
       })
       .catch((error) =>
@@ -45,7 +49,7 @@ const App = () => {
     }
     return (
       <>
-        <h2>Vald tid:</h2>
+        <h2>Vald tid ({selectedUser.name}):</h2>
         <p>{selectedDate}</p>
         <p>{selectedTime}</p>
       </>
@@ -76,6 +80,7 @@ const App = () => {
           <CalendarComponent
             onChange={handleDateTimeChange}
             bookings={data}
+            selectedUser={selectedUser}
             selectedDate={selectedDate}
             selctedTime={selectedTime}
             selectedRow={selectedRow}
