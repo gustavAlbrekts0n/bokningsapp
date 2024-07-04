@@ -98,5 +98,9 @@
 }
 
 .time-slot-booked-user {
-    background-color: rgb(16, 165, 16);
+    background-color: rgb(113, 201, 113);
+}
+
+.time-slot-booked-user:hover {
+    background-color: rgb(90, 160, 90);
 }

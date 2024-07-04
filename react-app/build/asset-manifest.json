@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.f897691e.css",
-    "main.js": "/static/js/main.ba3660cc.js",
+    "main.css": "/static/css/main.9683fb83.css",
+    "main.js": "/static/js/main.cd22b4f4.js",
     "static/js/453.5e50a5b7.chunk.js": "/static/js/453.5e50a5b7.chunk.js",
     "static/media/material-symbols-rounded.woff2": "/static/media/material-symbols-rounded.7e6c57567e2ab620ec78.woff2",
     "static/media/primeicons.svg": "/static/media/primeicons.6ed59f962963a4a73af2.svg",
@@ -12,12 +12,12 @@
     "static/media/primeicons.ttf": "/static/media/primeicons.a5c2a53d1ff7a9ff5933.ttf",
     "static/media/primeicons.woff2": "/static/media/primeicons.024b32cc7bf399b1a847.woff2",
     "index.html": "/index.html",
-    "main.f897691e.css.map": "/static/css/main.f897691e.css.map",
-    "main.ba3660cc.js.map": "/static/js/main.ba3660cc.js.map",
+    "main.9683fb83.css.map": "/static/css/main.9683fb83.css.map",
+    "main.cd22b4f4.js.map": "/static/js/main.cd22b4f4.js.map",
     "453.5e50a5b7.chunk.js.map": "/static/js/453.5e50a5b7.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f897691e.css",
-    "static/js/main.ba3660cc.js"
+    "static/css/main.9683fb83.css",
+    "static/js/main.cd22b4f4.js"
   ]
 }

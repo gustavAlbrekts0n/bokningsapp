@@ -3,15 +3,27 @@ import { ConfirmDialog, confirmDialog } from "primereact/confirmdialog";
 import { Toast } from "primereact/toast";
 import { Button } from "primereact/button";
 
-const ButtonBook = ({ date, time, user, hasSelection }) => {
+const ButtonBook = ({ date, time, user, hasSelection, setData }) => {
   const toast = useRef(null);
+
+  const getData = () => {
+    fetch("/api")
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Fetched data from server:");
+        console.log(data);
+        setData(data);
+      })
+      .catch((error) =>
+        console.error("Error fetching data from server:", error)
+      );
+  };
 
   const postData = (date, time, user) => {
     const data = {
+      user,
       date,
       time,
-      user,
-      isBooked: true,
     };
     const options = {
       method: "POST",
@@ -29,7 +41,8 @@ const ButtonBook = ({ date, time, user, hasSelection }) => {
       })
       .then((result) => {
         console.log(result);
-        window.location.reload(); // TODO: Better solution than reloading the entire page?
+        getData();
+        //window.location.reload(); // TODO: Better solution than reloading the entire page?
       })
       .catch((error) => {
         console.error("There was a problem with fetching the data", error);

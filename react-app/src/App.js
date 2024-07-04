@@ -49,7 +49,7 @@ const App = () => {
     }
     return (
       <>
-        <h2>Vald tid ({selectedUser.name}):</h2>
+        <h2>Vald tid:</h2>
         <p>{selectedDate}</p>
         <p>{selectedTime}</p>
       </>
@@ -94,6 +94,7 @@ const App = () => {
                 time={selectedTime}
                 user={selectedUser}
                 hasSelection={hasSelection}
+                setData={setData}
               />
             </div>
           </div>

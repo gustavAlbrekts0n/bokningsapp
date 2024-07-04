@@ -78,9 +78,8 @@ const CalendarComponent = ({
 
   return (
     <div className="card">
-      <Card title="Boka Tid">
+      <Card title="Boka Tid" subTitle={"Lägenhet " + selectedUser.name}>
         <div className="calendar">
-          "{selectedUser.name}"
           <div className="week-picker">
             <div onClick={handleLeftClick}>
               <i

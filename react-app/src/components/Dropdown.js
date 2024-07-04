@@ -3,9 +3,14 @@ import { Dropdown } from "primereact/dropdown";
 
 const DropdownComponent = ({ selectedUser, setSelectedUser }) => {
   const users = [
-    { name: "Adam Adamsson" },
-    { name: "Bertil Bertilsson" },
-    { name: "Calle Callesson" },
+    { name: "101" },
+    { name: "102" },
+    { name: "111" },
+    { name: "112" },
+    { name: "201" },
+    { name: "202" },
+    { name: "211" },
+    { name: "212" },
   ];
 
   return (

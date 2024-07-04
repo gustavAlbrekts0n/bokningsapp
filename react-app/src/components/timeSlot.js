@@ -15,7 +15,7 @@ const TimeSlot = ({
   onTimeSlotClick,
 }) => {
   const handleClick = () => {
-    if (date >= today && !isBooked) {
+    if (date >= today && !(isBooked && !isBookedByUser)) {
       console.log(timeDetailed);
       onTimeSlotClick(dateString, timeDetailed, rowIndex, columnIndex);
     }
