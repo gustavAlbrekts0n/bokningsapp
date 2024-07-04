@@ -20,7 +20,9 @@ const DropdownComponent = ({ selectedUser, setSelectedUser }) => {
         onChange={(e) => setSelectedUser(e.value)}
         options={users}
         optionLabel="name"
-        placeholder="Välj användare"
+        placeholder="Lägenhet"
+        emptyFilterMessage="Inget resultat"
+        emptyMessage="Inget resultat"
         className="w-full md:w-14rem"
       />
     </div>

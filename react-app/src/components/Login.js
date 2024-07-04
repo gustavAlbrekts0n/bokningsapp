@@ -1,5 +1,5 @@
 import DropdownComponent from "./Dropdown";
-import TextInput from "./TextInput";
+import InputPassword from "./InputPassword";
 
 const Login = ({ selectedUser, setSelectedUser, setAuthentication }) => {
   return (
@@ -11,7 +11,7 @@ const Login = ({ selectedUser, setSelectedUser, setAuthentication }) => {
             selectedUser={selectedUser}
             setSelectedUser={setSelectedUser}
           />
-          <TextInput
+          <InputPassword
             selectedUser={selectedUser}
             setAuthentication={setAuthentication}
           />

@@ -11,7 +11,6 @@ const ButtonBook = ({ date, time, user, hasSelection, setData }) => {
       .then((response) => response.json())
       .then((data) => {
         console.log("Fetched data from server:");
-        console.log(data);
         setData(data);
       })
       .catch((error) =>
@@ -42,7 +41,6 @@ const ButtonBook = ({ date, time, user, hasSelection, setData }) => {
       .then((result) => {
         console.log(result);
         getData();
-        //window.location.reload(); // TODO: Better solution than reloading the entire page?
       })
       .catch((error) => {
         console.error("There was a problem with fetching the data", error);
@@ -61,12 +59,12 @@ const ButtonBook = ({ date, time, user, hasSelection, setData }) => {
   };
 
   const reject = () => {
-    toast.current.show({
+    /*toast.current.show({
       severity: "warn",
       summary: "Bokning avbruten",
       detail: "Tiden har inte bokats",
       life: 3000,
-    });
+    });*/
     console.log("Bokning avbruten.", date, time, user);
   };
 

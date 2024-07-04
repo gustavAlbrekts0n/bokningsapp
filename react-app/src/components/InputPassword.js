@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useRef } from "react";
 import { useFormik } from "formik";
-import { InputText } from "primereact/inputtext";
+import { Password } from "primereact/password";
 import { Button } from "primereact/button";
+import { Toast } from "primereact/toast";
 import { classNames } from "primereact/utils";
 
 // https://v9.primereact.org/inputtext/
 
-const TextInput = ({ selectedUser, setAuthentication }) => {
+const InputPassword = ({ selectedUser, setAuthentication }) => {
+  const toast = useRef(null);
+
   const postData = (password) => {
     const data = {
       password,
@@ -31,10 +34,23 @@ const TextInput = ({ selectedUser, setAuthentication }) => {
         if (result.status === 200) {
           console.log("Authentication successful");
           setAuthentication(true);
+        } else {
+          toast.current.show({
+            severity: "error",
+            summary: "Autentiseringsfel",
+            detail: "Felaktigt lösenord",
+            life: 3000,
+          });
         }
       })
       .catch((error) => {
         console.error("There was a problem with fetching the data", error);
+        toast.current.show({
+          severity: "error",
+          summary: "Nätverksfel",
+          detail: "Försök igen senare",
+          life: 3000,
+        });
       });
   };
 
@@ -55,6 +71,13 @@ const TextInput = ({ selectedUser, setAuthentication }) => {
       if (selectedUser) {
         postData(formik.values.value);
         formik.resetForm();
+      } else {
+        toast.current.show({
+          severity: "error",
+          summary: "Ingen lägenhet vald",
+          detail: "Vänligen välj lägenhet",
+          life: 3000,
+        });
       }
     },
   });
@@ -72,13 +95,16 @@ const TextInput = ({ selectedUser, setAuthentication }) => {
 
   return (
     <div className="card flex justify-content-center">
+      <Toast ref={toast} />
       <form onSubmit={formik.handleSubmit} className="form">
         <span className="p-float-label">
-          <InputText
+          <Password
             id="value"
             name="value"
             value={formik.values.value}
             maxLength={64}
+            feedback={false}
+            toggleMask
             onChange={(e) => {
               formik.setFieldValue("value", e.target.value);
             }}
@@ -87,10 +113,10 @@ const TextInput = ({ selectedUser, setAuthentication }) => {
           <label htmlFor="input_value">Lösenord</label>
         </span>
         {getFormErrorMessage("value")}
-        <Button type="submit" label="Bekräfta" />
+        <Button type="submit" label="Logga in" />
       </form>
     </div>
   );
 };
 
-export default TextInput;
+export default InputPassword;
