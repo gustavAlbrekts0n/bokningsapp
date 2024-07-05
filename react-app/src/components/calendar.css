@@ -7,14 +7,13 @@
 }
 
 .week-picker {
-  width: 70%; /* TODO */
+  width: 50%; /* TODO */
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  font-size: 20px;
-  padding: 5px;
-  /*background-color: rgb(252, 133, 118);*/
+  font-size: 16px;
+  background-color: rgb(252, 133, 118);
 }
 
 .arrow {
@@ -33,21 +32,22 @@
   width: 100%;
   display: flex;
   flex-direction: row;
-  /*background-color: aqua;*/
+  background-color: aqua;
 }
 
 .header-cell {
   flex: 1;
-  padding: 20px;
+  padding: 10px 0px;
   text-align: center;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 400;
 }
 
 .body {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  /*background-color: rgb(233, 179, 109);*/
+  background-color: rgb(233, 179, 109);
 }
 
 .day-column {
@@ -60,7 +60,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 90px;
+  width: 90px;
   aspect-ratio: 1/1;
   margin: 6px 16px;
   cursor: pointer;
@@ -109,6 +109,12 @@
   .calendar {
     width: 60vw;
     background-color: rgb(255, 162, 162);
+  }
+
+  .time-slot {
+    width: calc(60vw * (90/610));
+    aspect-ratio: 1/1;
+    margin: 6px calc(60vw * (16/610));
   }
 }
   
