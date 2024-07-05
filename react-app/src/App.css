@@ -149,3 +149,13 @@
 .unbookable:hover {
   background-color: rgb(189, 189, 189);
 }
+
+@media only screen and (max-width: 1024px) {
+  body {
+    background-color: lightblue;
+  }
+
+  .navbar {
+    width: 100vw;
+  }
+}
