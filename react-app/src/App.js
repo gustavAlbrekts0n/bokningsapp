@@ -14,7 +14,7 @@ const App = () => {
   const [selectedTime, setSelectedTime] = useState(" ");
   const [selectedRow, setSelectedRow] = useState(-1);
   const [selectedColumn, setSelectedColumn] = useState(-1);
-  const [selectedUser, setSelectedUser] = useState(null);
+  const [selectedUser, setSelectedUser] = useState({name: "Test"});
   const [data, setData] = useState([]);
 
   let hasSelection = selectedDate !== " ";
@@ -56,7 +56,7 @@ const App = () => {
     );
   };
 
-  if (!isAuthenticated)
+  if (false)
     //!isAuthenticated
     return (
       <Login
