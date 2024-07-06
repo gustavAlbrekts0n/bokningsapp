@@ -14,7 +14,7 @@ const DropdownComponent = ({ selectedUser, setSelectedUser }) => {
   ];
 
   return (
-    <div className="card flex justify-content-center">
+    <div className="card flex justify-content-center dropdown">
       <Dropdown
         value={selectedUser}
         onChange={(e) => setSelectedUser(e.value)}
@@ -23,7 +23,7 @@ const DropdownComponent = ({ selectedUser, setSelectedUser }) => {
         placeholder="Lägenhet"
         emptyFilterMessage="Inget resultat"
         emptyMessage="Inget resultat"
-        className="w-full md:w-14rem"
+        className="w-full md:w-14rem dropdown-content"
       />
     </div>
   );

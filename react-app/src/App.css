@@ -159,3 +159,44 @@
     width: 100vw;
   }
 }
+
+@media only screen and (max-width: 650px) {
+  .login {
+    top: 25%;
+    /*background-color: rgb(255, 242, 0);*/
+  }
+
+  .login h2 {
+    font-size: 18px;
+  }
+
+  .login-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /*background-color: rgb(128, 0, 100);*/
+  }
+
+  .dropdown {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /*background-color: orange;*/
+  }
+
+  .dropdown-content {
+    width: 100%;
+  }
+
+  .form {
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0;
+    margin-top: 30px;
+    /*background-color: rgba(0, 42, 230, 0.521);*/
+  }
+}

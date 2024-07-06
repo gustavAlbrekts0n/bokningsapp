@@ -56,7 +56,7 @@ const App = () => {
     );
   };
 
-  if (false)
+  if (!isAuthenticated)
     //!isAuthenticated
     return (
       <Login
