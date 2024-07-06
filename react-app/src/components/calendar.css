@@ -7,13 +7,13 @@
 }
 
 .week-picker {
-  width: 50%; /* TODO */
+  width: 50%;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   font-size: 16px;
-  background-color: rgb(252, 133, 118);
+  /*background-color: rgb(252, 133, 118);*/
 }
 
 .arrow {
@@ -32,7 +32,7 @@
   width: 100%;
   display: flex;
   flex-direction: row;
-  background-color: aqua;
+  /*background-color: aqua;*/
 }
 
 .header-cell {
@@ -47,7 +47,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  background-color: rgb(233, 179, 109);
+  /*background-color: rgb(233, 179, 109);*/
 }
 
 .day-column {
@@ -60,11 +60,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 90px;
+  width: 70px;
   aspect-ratio: 1/1;
-  margin: 6px 16px;
+  margin: 4px 8px;
   cursor: pointer;
   text-align: center;
+  font-size: 14px;
   border-radius: 10px;
   transition: background-color 0.2s, transform 0.15s;
   background-color: rgb(218, 218, 218);
@@ -106,15 +107,39 @@
 }
 
 @media only screen and (max-width: 1024px) {
-  .calendar {
+  /*.calendar {
     width: 60vw;
     background-color: rgb(255, 162, 162);
   }
 
   .time-slot {
-    width: calc(60vw * (90/610));
+    width: calc(60vw * (70/610));
     aspect-ratio: 1/1;
-    margin: 6px calc(60vw * (16/610));
+    margin: 6px calc(60vw * (8/610));
+  }*/
+}
+
+@media only screen and (max-width: 500px) {
+  .calendar {
+    width: 80vw;
+    /*background-color: rgb(243, 227, 51);*/
+  }
+
+  .week-picker {
+    width: 75%;
+    font-size: 14px;
+  }
+
+  .header-cell {
+    font-size: 10px;
+  }
+
+  .time-slot {
+    width: calc(80vw * (70/430));
+    aspect-ratio: 1/1;
+    margin: 4px calc(80vw * (8/430));
+    font-size: 12px;
   }
 }
+  
   

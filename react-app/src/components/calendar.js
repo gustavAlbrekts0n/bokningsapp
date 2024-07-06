@@ -78,7 +78,7 @@ const CalendarComponent = ({
 
   return (
     <div className="card">
-      <Card title="Boka Tid" subTitle={"Lägenhet " + selectedUser.name}>
+      <Card /*</div>title="Boka Tid" subTitle={"Lägenhet " + selectedUser.name}*/>
         <div className="calendar">
           <div className="week-picker">
             <div onClick={handleLeftClick}>
