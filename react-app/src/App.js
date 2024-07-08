@@ -1,6 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
 import "primereact/resources/primereact.css";
 import "primereact/resources/themes/lara-light-teal/theme.css";
+/* primereact/resources/themes/lara-light-teal/theme.css förra */
+/* primereact/resources/themes/mira/theme.css mest seriös? */
+/* primereact/resources/themes/tailwind-light/theme.css */
+/* primereact/resources/themes/soho-light/theme.css */
+/* primereact/resources/themes/viva-light/theme.css */
 import "primeicons/primeicons.css";
 import "./App.css";
 import Login from "./components/Login";
