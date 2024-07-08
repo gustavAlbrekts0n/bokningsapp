@@ -6,6 +6,7 @@ import "./App.css";
 import Login from "./components/Login";
 import NavigationBar from "./components/NavigationBar";
 import CalendarComponent from "./components/Calendar";
+import Confirmation from "./components/Confirmation";
 import ButtonBook from "./components/ButtonBook";
 
 const App = () => {
@@ -14,7 +15,7 @@ const App = () => {
   const [selectedTime, setSelectedTime] = useState(" ");
   const [selectedRow, setSelectedRow] = useState(-1);
   const [selectedColumn, setSelectedColumn] = useState(-1);
-  const [selectedUser, setSelectedUser] = useState({name: "Test"});
+  const [selectedUser, setSelectedUser] = useState({ name: "Test" });
   const [data, setData] = useState([]);
 
   let hasSelection = selectedDate !== " ";
@@ -43,20 +44,26 @@ const App = () => {
       );
   }, []);
 
-  const getSelectionComponent = () => {
+  const getSelectionInfo = () => {
     if (!hasSelection) {
-      return <h2>Ingen vald tid</h2>;
+      return (
+        <>
+          <h3>Vald tid</h3>
+          <p>{"—"}</p>
+          <p>{"—"}</p>
+        </>
+      );
     }
     return (
       <>
-        <h2>Vald tid:</h2>
+        <h3>Vald tid</h3>
         <p>{selectedDate}</p>
         <p>{selectedTime}</p>
       </>
     );
   };
 
-  if (!isAuthenticated)
+  if (!true)
     //!isAuthenticated
     return (
       <Login
@@ -86,18 +93,28 @@ const App = () => {
             selectedRow={selectedRow}
             selectedColumn={selectedColumn}
           />
-          <div className="confirmation">
-            <div className="confirmation-content">
-              <div className="selection">{getSelectionComponent()}</div>
-              <ButtonBook
-                date={selectedDate}
-                time={selectedTime}
-                user={selectedUser}
-                hasSelection={hasSelection}
-                setData={setData}
-              />
+          <Confirmation
+            getSelectionInfo={getSelectionInfo}
+            date={selectedDate}
+            time={selectedTime}
+            user={selectedUser}
+            hasSelection={hasSelection}
+            setData={setData}
+          />
+          {/*
+            <div className="confirmation">
+              <div className="confirmation-content">
+                <div className="selection">{getSelectionInfo()}</div>
+                <ButtonBook
+                  date={selectedDate}
+                  time={selectedTime}
+                  user={selectedUser}
+                  hasSelection={hasSelection}
+                  setData={setData}
+                />
+              </div>
             </div>
-          </div>
+          */}
         </div>
       </div>
     );

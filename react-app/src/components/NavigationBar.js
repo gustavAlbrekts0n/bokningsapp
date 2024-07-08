@@ -5,14 +5,18 @@ import { Button } from "primereact/button";
 export default function NavigationBar() {
   const items = [
     {
-      label: "Hem",
       icon: "pi pi-home",
       command: () => {
         console.log("Clicked Home");
       },
     },
     {
-      label: "Om appen",
+      icon: "pi pi-user",
+      command: () => {
+        console.log("Clicked User");
+      },
+    },
+    {
       icon: "pi pi-info-circle",
       command: () => {
         console.log("Clicked About");
@@ -46,7 +50,7 @@ export default function NavigationBar() {
       }}
       className="card flex justify-content-center"
       label="Logga ut"
-      raised
+      outlined
     />
   );
 

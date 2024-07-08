@@ -69,12 +69,12 @@
 
 .app-body {
   width: 100%;
-  padding-top: 10px;
-  padding-bottom: 40px;
+  max-width: var(--app-max-width);
+  padding: 80px;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
   /*background-color: rgb(252, 245, 181);*/
 }
 
@@ -89,7 +89,7 @@
   bottom: 0;
   margin-top: 30px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 10px;
-  /*background-color: rgb(255, 194, 61);*/
+  background-color: rgb(255, 194, 61);
 }
 
 .confirmation-content {
@@ -98,7 +98,7 @@
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  /*background: rgb(211, 21, 228);*/
+  background: rgb(211, 21, 228);
 }
 
 .selection {
@@ -108,7 +108,7 @@
   justify-content: space-between;
   align-items: center;
   margin-left: 142px; /* TODO: Hardcoded magic number */
-  /*background-color: blueviolet;*/
+  background-color: blueviolet;
 }
 
 .selection h2 {
