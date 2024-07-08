@@ -49,16 +49,20 @@ const App = () => {
       return (
         <>
           <h3>Vald tid</h3>
-          <p>{"—"}</p>
-          <p>{"—"}</p>
+          <div className="selection-text">
+            <p>{"—"}</p>
+            <p>{"—"}</p>
+          </div>
         </>
       );
     }
     return (
       <>
         <h3>Vald tid</h3>
-        <p>{selectedDate}</p>
-        <p>{selectedTime}</p>
+        <div className="selection-text">
+          <p>{selectedDate}</p>
+          <p>{selectedTime}</p>
+        </div>
       </>
     );
   };
@@ -95,9 +99,9 @@ const App = () => {
           />
           <Confirmation
             getSelectionInfo={getSelectionInfo}
-            date={selectedDate}
-            time={selectedTime}
-            user={selectedUser}
+            selectedDate={selectedDate}
+            selectedTime={selectedTime}
+            selectedUser={selectedUser}
             hasSelection={hasSelection}
             setData={setData}
           />

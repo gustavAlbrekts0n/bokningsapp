@@ -14,14 +14,16 @@ const Confirmation = ({
   return (
     <div className="card confirmation2">
       <Card>
-        <div>{getSelectionInfo()}</div>
-        <ButtonBook
-          date={selectedDate}
-          time={selectedTime}
-          user={selectedUser}
-          hasSelection={hasSelection}
-          setData={setData}
-        />
+        <div className="confirmation-body">
+          <div className="selection">{getSelectionInfo()}</div>
+          <ButtonBook
+            date={selectedDate}
+            time={selectedTime}
+            user={selectedUser}
+            hasSelection={hasSelection}
+            setData={setData}
+          />
+        </div>
       </Card>
     </div>
   );

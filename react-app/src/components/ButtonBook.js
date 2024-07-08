@@ -107,7 +107,7 @@ const ButtonBook = ({ date, time, user, hasSelection, setData }) => {
       <div className="card flex justify-content-center">
         <Button
           onClick={() => showTemplate()}
-          className="card flex justify-content-center"
+          className="card flex justify-content-center button-book"
           label="Boka"
           raised
           disabled={!hasSelection || user === null}

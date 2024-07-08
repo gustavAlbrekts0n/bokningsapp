@@ -70,11 +70,11 @@
 .app-body {
   width: 100%;
   max-width: var(--app-max-width);
-  padding: 80px;
+  padding: 40px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
   /*background-color: rgb(252, 245, 181);*/
 }
 
@@ -101,7 +101,7 @@
   background: rgb(211, 21, 228);
 }
 
-.selection {
+.selection-old {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -111,19 +111,19 @@
   background-color: blueviolet;
 }
 
-.selection h2 {
+.selection-old h2 {
   font-size: 24px;
   font-weight: 600;
   margin: auto;
 }
 
-.selection p {
+.selection-old p {
   font-size: 18px;
   margin: auto;
   /*background-color: yellow;*/
 }
 
-.button-book {
+.button-book-old {
   padding: 12px 36px;
   margin: 8px;
   color: black;
@@ -137,7 +137,7 @@
   background-color: rgb(115, 177, 212);
 }
 
-.button-book:hover {
+.button-book-old:hover {
   background-color: rgb(104, 146, 185);
 }
 
