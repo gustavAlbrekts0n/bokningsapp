@@ -49,6 +49,7 @@
 }
 
 .app-header-content {
+  width: 470px;
   max-width: var(--app-max-width);
   display: flex;
   flex-direction: column;

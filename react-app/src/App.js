@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "primereact/resources/primereact.css";
 import "primereact/resources/themes/lara-light-teal/theme.css";
 import "primeicons/primeicons.css";
@@ -10,6 +10,8 @@ import Confirmation from "./components/Confirmation";
 import ButtonBook from "./components/ButtonBook";
 
 const App = () => {
+  const confirmationRef = useRef(null);
+
   const [isAuthenticated, setAuthentication] = useState(false);
   const [selectedDate, setSelectedDate] = useState(" ");
   const [selectedTime, setSelectedTime] = useState(" ");
@@ -25,6 +27,8 @@ const App = () => {
     setSelectedTime(time);
     setSelectedRow(rowIndex);
     setSelectedColumn(columnIndex);
+
+    confirmationRef.current.scrollIntoView();
   };
 
   useEffect(() => {
@@ -97,14 +101,16 @@ const App = () => {
             selectedRow={selectedRow}
             selectedColumn={selectedColumn}
           />
-          <Confirmation
-            getSelectionInfo={getSelectionInfo}
-            selectedDate={selectedDate}
-            selectedTime={selectedTime}
-            selectedUser={selectedUser}
-            hasSelection={hasSelection}
-            setData={setData}
-          />
+          <div ref={confirmationRef}>
+            <Confirmation
+              getSelectionInfo={getSelectionInfo}
+              selectedDate={selectedDate}
+              selectedTime={selectedTime}
+              selectedUser={selectedUser}
+              hasSelection={hasSelection}
+              setData={setData}
+            />
+          </div>
           {/*
             <div className="confirmation">
               <div className="confirmation-content">
