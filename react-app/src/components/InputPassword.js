@@ -37,7 +37,7 @@ const InputPassword = ({ selectedUser, setAuthentication }) => {
         } else {
           toast.current.show({
             severity: "error",
-            summary: "Autentiseringsfel",
+            summary: "Inloggningsfel",
             detail: "Felaktigt lösenord",
             life: 3000,
           });
