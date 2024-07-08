@@ -49,7 +49,7 @@
 }
 
 .app-header-content {
-  width: var(--app-max-width);
+  max-width: var(--app-max-width);
   display: flex;
   flex-direction: column;
   justify-content: space-around;
