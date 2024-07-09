@@ -1,4 +1,5 @@
 const express = require("express");
+const serverless = require("serverless-http");
 const Datastore = require("nedb");
 
 const app = express();
